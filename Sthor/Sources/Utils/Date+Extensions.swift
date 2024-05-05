@@ -8,8 +8,5 @@
 import SwiftUI
 
 extension Date {
-    var currentDate: Date {
-        return Date()
-    }
     
 }

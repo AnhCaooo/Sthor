@@ -19,7 +19,7 @@ struct HomeView: View {
                         ScreenHeader(
                             header: Header(
                                 title: "Dashboard",
-                                subTitle: formatDate(date: currentDate),
+                                subTitle: formatDate(date: currentDate), 
                                 horizontalAlignment: .leading)
                         )
                     }

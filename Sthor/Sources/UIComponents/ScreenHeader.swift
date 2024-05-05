@@ -7,17 +7,6 @@
 
 import SwiftUI
 
-struct Header: Identifiable {
-    let id = UUID()
-    let title: LocalizedStringKey
-    let subTitle: LocalizedStringKey?
-    
-    init(title: LocalizedStringKey, subTitle: LocalizedStringKey? = nil) {
-        self.title = title
-        self.subTitle = subTitle
-    }
-}
-
 struct ScreenHeader: View {
     let header: Header
     var body: some View {

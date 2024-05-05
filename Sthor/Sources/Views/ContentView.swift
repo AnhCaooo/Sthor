@@ -10,13 +10,6 @@ import SwiftUI
 struct ContentView: View {
     @State private var selection: Tab = .home
     
-    enum Tab {
-        case home
-        case electric
-        case notification
-        case profile
-    }
-    
     var body: some View {
         TabView(selection: $selection) {
             HomeView()
@@ -37,7 +30,7 @@ struct ContentView: View {
                 .tabItem{
                     Label("Notifications", systemImage: "bell")
                 }
-                .tag(Tab.notification)
+                .tag(Tab.notifications)
             
             
             ProfileView()

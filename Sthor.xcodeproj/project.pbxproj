@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A02B85E32BE7A6BF00165D53 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02B85E22BE7A6BF00165D53 /* Tab.swift */; };
+		A02B85E52BE7A7BC00165D53 /* Ui.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02B85E42BE7A7BC00165D53 /* Ui.swift */; };
 		A03C92BA2BE6A64E0076E4F7 /* SthorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03C92B92BE6A64E0076E4F7 /* SthorApp.swift */; };
 		A03C92BC2BE6A64E0076E4F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03C92BB2BE6A64E0076E4F7 /* ContentView.swift */; };
 		A03C92BE2BE6A64E0076E4F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A03C92BD2BE6A64E0076E4F7 /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A02B85E22BE7A6BF00165D53 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		A02B85E42BE7A7BC00165D53 /* Ui.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ui.swift; sourceTree = "<group>"; };
 		A03C92B62BE6A64E0076E4F7 /* Sthor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sthor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A03C92B92BE6A64E0076E4F7 /* SthorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SthorApp.swift; sourceTree = "<group>"; };
 		A03C92BB2BE6A64E0076E4F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				A03C92D32BE6A7FB0076E4F7 /* README.md */,
+				A02B85E22BE7A6BF00165D53 /* Tab.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				A03C92D42BE6A80F0076E4F7 /* README.md */,
+				A02B85E42BE7A7BC00165D53 /* Ui.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -141,8 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				A03C92BB2BE6A64E0076E4F7 /* ContentView.swift */,
-				A03C92CE2BE6A75D0076E4F7 /* ElectricView.swift */,
 				A03C92D52BE6A8390076E4F7 /* HomeView.swift */,
+				A03C92CE2BE6A75D0076E4F7 /* ElectricView.swift */,
 				A03C92D72BE6A8500076E4F7 /* NotificationsView.swift */,
 				A03C92D92BE6A86B0076E4F7 /* ProfileView.swift */,
 				A03C92DB2BE6A8810076E4F7 /* README.md */,
@@ -222,7 +228,9 @@
 			files = (
 				A03C92BC2BE6A64E0076E4F7 /* ContentView.swift in Sources */,
 				A03C92CF2BE6A75D0076E4F7 /* ElectricView.swift in Sources */,
+				A02B85E52BE7A7BC00165D53 /* Ui.swift in Sources */,
 				A03C92D12BE6A7B60076E4F7 /* ScreenHeader.swift in Sources */,
+				A02B85E32BE7A6BF00165D53 /* Tab.swift in Sources */,
 				A03C92D62BE6A8390076E4F7 /* HomeView.swift in Sources */,
 				A03C92BA2BE6A64E0076E4F7 /* SthorApp.swift in Sources */,
 				A03C92DA2BE6A86B0076E4F7 /* ProfileView.swift in Sources */,

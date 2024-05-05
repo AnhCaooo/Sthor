@@ -16,6 +16,7 @@ struct NotificationsView: View {
             Text("Hello, here is the list of your notifications that you set alarm for.")
             Spacer()
         }
+        .padding()
     }
 }
 

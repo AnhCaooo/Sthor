@@ -16,6 +16,7 @@ struct ProfileView: View {
             Text("Hello, welcome to your profile.")
             Spacer()
         }
+        .padding()
     }
 }
 

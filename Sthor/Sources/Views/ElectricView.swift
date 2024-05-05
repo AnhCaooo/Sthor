@@ -16,6 +16,7 @@ struct ElectricView: View {
             Text("Hello, this is advanced view for exchange electric price. Select specific timeslot to view electric")
             Spacer()
         }
+        .padding()
     }
 }
 

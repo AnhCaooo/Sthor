@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    let header = Header(title: "Dashboard", subTitle: "4th May 2024", horizontalAlignment: .leading)
+    @State private var currentDate = Date()
     var body: some View {
         NavigationStack {
             ScrollView(.vertical) {
@@ -16,7 +16,12 @@ struct HomeView: View {
                     Section {
                         
                     } header: {
-                        ScreenHeader(header: header)
+                        ScreenHeader(
+                            header: Header(
+                                title: "Dashboard",
+                                subTitle: formatDate(date: currentDate),
+                                horizontalAlignment: .leading)
+                        )
                     }
                 }
                 .padding(15)

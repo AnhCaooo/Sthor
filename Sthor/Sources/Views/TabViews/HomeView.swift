@@ -8,20 +8,20 @@
 import SwiftUI
 
 struct HomeView: View {
-    let header = Header(title: "Dashboard", subTitle: "4th May 2024")
+    let header = Header(title: "Dashboard", subTitle: "4th May 2024", horizontalAlignment: .leading)
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                ScreenHeader(header: header)
-                Spacer()
+        NavigationStack {
+            ScrollView(.vertical) {
+                LazyVStack(spacing: 10, pinnedViews: [.sectionHeaders]) {
+                    Section {
+                        
+                    } header: {
+                        ScreenHeader(header: header)
+                    }
+                }
+                .padding(15)
             }
-            Spacer()
-            Button("Button") {
-                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-            }
-            Spacer()
         }
-        .padding()
     }
 }
 

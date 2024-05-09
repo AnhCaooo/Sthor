@@ -12,11 +12,15 @@ struct ProfileView: View {
        let header = Header(title: "Profile", horizontalAlignment: .leading)
        NavigationStack {
            ScrollView(.vertical) {
+               // MARK: Title
+               ScreenHeader(header: header)
+                   .padding()
+               
                LazyVStack(spacing: 10, pinnedViews: [.sectionHeaders]) {
                    Section {
                        Text("Hello, welcome to your profile.")
                    } header: {
-                       ScreenHeader(header: header)
+                       
                    }
                }
                .padding(15)

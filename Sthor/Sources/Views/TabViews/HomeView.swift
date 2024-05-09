@@ -12,19 +12,23 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             ScrollView(.vertical) {
+                // MARK: Title
+                ScreenHeader(
+                    header: Header(
+                        title: "Dashboard",
+                        subTitle: formatDate(date: currentDate),
+                        horizontalAlignment: .leading)
+                )
+                .padding()
+                
                 LazyVStack(spacing: 10, pinnedViews: [.sectionHeaders]) {
                     Section {
-                        
+                        Text("hello world")
                     } header: {
-                        ScreenHeader(
-                            header: Header(
-                                title: "Dashboard",
-                                subTitle: formatDate(date: currentDate), 
-                                horizontalAlignment: .leading)
-                        )
+                        
                     }
                 }
-                .padding(15)
+
             }
         }
     }
@@ -32,4 +36,5 @@ struct HomeView: View {
 
 #Preview {
     HomeView()
+    
 }

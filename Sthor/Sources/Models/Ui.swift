@@ -13,12 +13,10 @@ struct Header: Identifiable {
     let title: LocalizedStringKey
     let subTitle: String?
     let horizontalAlignment: Alignment
-    let verticalAlignment: Alignment
     
-    init(title: LocalizedStringKey, subTitle: String? = nil, horizontalAlignment: Alignment = .center, verticalAlignment: Alignment = .center) {
+    init(title: LocalizedStringKey, subTitle: String? = nil, horizontalAlignment: Alignment = .center) {
         self.title = title
         self.subTitle = subTitle
         self.horizontalAlignment = horizontalAlignment
-        self.verticalAlignment = verticalAlignment
     }
 }

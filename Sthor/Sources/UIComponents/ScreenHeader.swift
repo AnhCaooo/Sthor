@@ -22,7 +22,6 @@ struct ScreenHeader: View {
                 }                
             }
             .horizontalSpacing(header.horizontalAlignment)
-            .verticalSpacing(header.verticalAlignment)
 
         }
     }
@@ -31,8 +30,8 @@ struct ScreenHeader: View {
 
 struct ScreenHeader_Previews: PreviewProvider {
     static let headers = [
-        Header(title: "Dashboard0", horizontalAlignment: .bottom, verticalAlignment: .bottom),
-        Header(title: "Dashboard1", subTitle: "4th May 2024", verticalAlignment: .leading),
+        Header(title: "Dashboard0", horizontalAlignment: .bottom),
+        Header(title: "Dashboard1", subTitle: "4th May 2024"),
         Header(title: "Dashboard2", subTitle: ""),
         Header(title: "Dashboard4", subTitle: "4th May 2024", horizontalAlignment: .leading),
     ]

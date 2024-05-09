@@ -14,12 +14,6 @@ extension View {
             .frame(maxWidth: .infinity, alignment: alignment)
     }
     
-    @ViewBuilder
-    func verticalSpacing(_ alignment: Alignment = .center) -> some View {
-        self
-            .frame(maxHeight: .infinity, alignment: alignment)
-    }
-    
     func formatDate(date: Date, format: String? = "EEEE, d'th' MMMM yyyy") -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = format

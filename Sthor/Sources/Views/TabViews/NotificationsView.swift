@@ -8,15 +8,20 @@
 import SwiftUI
 
 struct NotificationsView: View {
-    var body: some View {
-        let header = Header(title: "Notifications")
-        VStack {
-            ScreenHeader(header: header)
-            Spacer()
-            Text("Hello, here is the list of your notifications that you set alarm for.")
-            Spacer()
+     var body: some View {
+        let header = Header(title: "Notifications", horizontalAlignment: .leading)
+        NavigationStack {
+            ScrollView(.vertical) {
+                LazyVStack(spacing: 10, pinnedViews: [.sectionHeaders]) {
+                    Section {
+                        Text("Hello, here is the list of your notifications that you set alarm for.")
+                    } header: {
+                        ScreenHeader(header: header)
+                    }
+                }
+                .padding(15)
+            }
         }
-        .padding()
     }
 }
 

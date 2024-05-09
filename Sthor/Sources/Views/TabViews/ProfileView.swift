@@ -9,15 +9,20 @@ import SwiftUI
 
 struct ProfileView: View {
     var body: some View {
-        let header = Header(title: "Profile")
-        VStack {
-            ScreenHeader(header: header)
-            Spacer()
-            Text("Hello, welcome to your profile.")
-            Spacer()
-        }
-        .padding()
-    }
+       let header = Header(title: "Profile", horizontalAlignment: .leading)
+       NavigationStack {
+           ScrollView(.vertical) {
+               LazyVStack(spacing: 10, pinnedViews: [.sectionHeaders]) {
+                   Section {
+                       Text("Hello, welcome to your profile.")
+                   } header: {
+                       ScreenHeader(header: header)
+                   }
+               }
+               .padding(15)
+           }
+       }
+   }
 }
 
 #Preview {

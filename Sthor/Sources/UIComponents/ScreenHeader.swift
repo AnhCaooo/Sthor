@@ -10,18 +10,21 @@ import SwiftUI
 struct ScreenHeader: View {
     let header: Header
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(header.title)
-                .font(.title)
-                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-            if let unwrappedSubTitle = header.subTitle {
-                Text(unwrappedSubTitle)
-                    .font(.subheadline)
-                    .fontWeight(.regular)
+        HStack {
+            VStack(alignment: .leading) {
+                Text(header.title)
+                    .font(.title)
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                if let unwrappedSubTitle = header.subTitle {
+                    Text(unwrappedSubTitle)
+                        .font(.subheadline)
+                        .fontWeight(.regular)
+                }                
             }
+            .horizontalSpacing(header.horizontalAlignment)
+            .verticalSpacing(header.verticalAlignment)
+
         }
-        .horizontalSpacing(header.horizontalAlignment)
-        .verticalSpacing(header.verticalAlignment)
     }
 }
 

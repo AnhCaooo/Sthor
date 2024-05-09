@@ -20,6 +20,8 @@
 		A03C92D62BE6A8390076E4F7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03C92D52BE6A8390076E4F7 /* HomeView.swift */; };
 		A03C92D82BE6A8500076E4F7 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03C92D72BE6A8500076E4F7 /* NotificationsView.swift */; };
 		A03C92DA2BE6A86B0076E4F7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03C92D92BE6A86B0076E4F7 /* ProfileView.swift */; };
+		A04C246F2BECD1C300372341 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C246E2BECD1C300372341 /* Theme.swift */; };
+		A04C24712BECD58E00372341 /* Electric.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C24702BECD58E00372341 /* Electric.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		A03C92DB2BE6A8810076E4F7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A03C92DC2BE6A9280076E4F7 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		A03C92DD2BE6A9350076E4F7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A04C246E2BECD1C300372341 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		A04C24702BECD58E00372341 /* Electric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Electric.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,8 @@
 			children = (
 				A03C92D42BE6A80F0076E4F7 /* README.md */,
 				A02B85E42BE7A7BC00165D53 /* Ui.swift */,
+				A04C246E2BECD1C300372341 /* Theme.swift */,
+				A04C24702BECD58E00372341 /* Electric.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -242,6 +248,7 @@
 			files = (
 				A03C92BC2BE6A64E0076E4F7 /* ContentView.swift in Sources */,
 				A01E2D0E2BE7B4B400BFDAC3 /* Date+Extensions.swift in Sources */,
+				A04C24712BECD58E00372341 /* Electric.swift in Sources */,
 				A03C92CF2BE6A75D0076E4F7 /* ElectricView.swift in Sources */,
 				A02B85E52BE7A7BC00165D53 /* Ui.swift in Sources */,
 				A03C92D12BE6A7B60076E4F7 /* ScreenHeader.swift in Sources */,
@@ -249,6 +256,7 @@
 				A01E2D0C2BE7AF2D00BFDAC3 /* View+Extenstions.swift in Sources */,
 				A03C92D62BE6A8390076E4F7 /* HomeView.swift in Sources */,
 				A03C92BA2BE6A64E0076E4F7 /* SthorApp.swift in Sources */,
+				A04C246F2BECD1C300372341 /* Theme.swift in Sources */,
 				A03C92DA2BE6A86B0076E4F7 /* ProfileView.swift in Sources */,
 				A03C92D82BE6A8500076E4F7 /* NotificationsView.swift in Sources */,
 			);

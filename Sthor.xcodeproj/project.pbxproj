@@ -23,6 +23,7 @@
 		A04C246F2BECD1C300372341 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C246E2BECD1C300372341 /* Theme.swift */; };
 		A04C24712BECD58E00372341 /* Electric.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C24702BECD58E00372341 /* Electric.swift */; };
 		A04C24732BECEC0500372341 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C24722BECEC0500372341 /* CardView.swift */; };
+		A0B956E82BEF627C0062C411 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B956E72BEF627C0062C411 /* PreviewData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		A04C246E2BECD1C300372341 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		A04C24702BECD58E00372341 /* Electric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Electric.swift; sourceTree = "<group>"; };
 		A04C24722BECEC0500372341 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		A0B956E72BEF627C0062C411 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				A03C92C02BE6A64E0076E4F7 /* Preview Assets.xcassets */,
+				A0B956E72BEF627C0062C411 /* PreviewData.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				A01E2D0E2BE7B4B400BFDAC3 /* Date+Extensions.swift in Sources */,
 				A04C24712BECD58E00372341 /* Electric.swift in Sources */,
 				A03C92CF2BE6A75D0076E4F7 /* ElectricView.swift in Sources */,
+				A0B956E82BEF627C0062C411 /* PreviewData.swift in Sources */,
 				A02B85E52BE7A7BC00165D53 /* Ui.swift in Sources */,
 				A03C92D12BE6A7B60076E4F7 /* ScreenHeader.swift in Sources */,
 				A02B85E32BE7A6BF00165D53 /* Tab.swift in Sources */,

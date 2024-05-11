@@ -35,6 +35,5 @@ struct CardView_Previews: PreviewProvider {
     static var priceResponse = PriceResponse.sampleResponseData
     static var previews: some View {
         CardView(priceResponse: priceResponse)
-            .previewLayout(.fixed(width: 400, height: 200))
     }
 }

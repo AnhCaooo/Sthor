@@ -28,6 +28,6 @@ let electricResponsePreviewData = PriceResponse(
     status: "success",
     data: PriceData(
         group: "hour",
-        series: [PriceSeries](repeating: samplePriceSeries, count: 3)
+        series: [PriceSeries](repeating: samplePriceSeries, count: 1)
     )
 )

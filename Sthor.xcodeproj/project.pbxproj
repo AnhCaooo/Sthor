@@ -24,6 +24,8 @@
 		A04C24712BECD58E00372341 /* Electric.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C24702BECD58E00372341 /* Electric.swift */; };
 		A04C24732BECEC0500372341 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C24722BECEC0500372341 /* CardView.swift */; };
 		A0B956E82BEF627C0062C411 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B956E72BEF627C0062C411 /* PreviewData.swift */; };
+		A0B956EB2BEF70400062C411 /* MiniBarChatswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B956EA2BEF70400062C411 /* MiniBarChatswift.swift */; };
+		A0B956ED2BEF70540062C411 /* AdvancedBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B956EC2BEF70540062C411 /* AdvancedBarChart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		A04C24702BECD58E00372341 /* Electric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Electric.swift; sourceTree = "<group>"; };
 		A04C24722BECEC0500372341 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		A0B956E72BEF627C0062C411 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
+		A0B956EA2BEF70400062C411 /* MiniBarChatswift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniBarChatswift.swift; sourceTree = "<group>"; };
+		A0B956EC2BEF70540062C411 /* AdvancedBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedBarChart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,7 @@
 		A03C92C82BE6A6870076E4F7 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				A0B956E92BEF6EAC0062C411 /* charts */,
 				A03C92D02BE6A7B60076E4F7 /* ScreenHeader.swift */,
 				A04C24722BECEC0500372341 /* CardView.swift */,
 				A03C92D22BE6A7DC0076E4F7 /* README.md */,
@@ -180,6 +185,15 @@
 				A03C92DB2BE6A8810076E4F7 /* README.md */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A0B956E92BEF6EAC0062C411 /* charts */ = {
+			isa = PBXGroup;
+			children = (
+				A0B956EA2BEF70400062C411 /* MiniBarChatswift.swift */,
+				A0B956EC2BEF70540062C411 /* AdvancedBarChart.swift */,
+			);
+			path = charts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,7 +266,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0B956EB2BEF70400062C411 /* MiniBarChatswift.swift in Sources */,
 				A04C24732BECEC0500372341 /* CardView.swift in Sources */,
+				A0B956ED2BEF70540062C411 /* AdvancedBarChart.swift in Sources */,
 				A03C92BC2BE6A64E0076E4F7 /* ContentView.swift in Sources */,
 				A01E2D0E2BE7B4B400BFDAC3 /* Date+Extensions.swift in Sources */,
 				A04C24712BECD58E00372341 /* Electric.swift in Sources */,

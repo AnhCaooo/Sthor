@@ -20,6 +20,11 @@ struct MiniBarChart: View {
                 )
             }
         }
+        .chartPlotStyle { chartContent in
+            chartContent
+                .background(Color.secondary.opacity(0.1))
+//                .frame(height: 200)
+        }
         .chartYAxis(.hidden)
         .aspectRatio(1, contentMode: .fit)
         .padding()

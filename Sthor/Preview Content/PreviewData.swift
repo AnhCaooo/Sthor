@@ -21,6 +21,19 @@ let samplePriceSeries = PriceSeries(
         TimelyData(origTime: "2024-05-09 08:00:00", time: "2024-05-09 08:00:00", price: 12.02, vatFactor: 1, isToday: true),
         TimelyData(origTime: "2024-05-09 09:00:00", time: "2024-05-09 09:00:00", price: 9.13, vatFactor: 1, isToday: true),
         TimelyData(origTime: "2024-05-09 10:00:00", time: "2024-05-09 10:00:00", price: 4.8, vatFactor: 1, isToday: true),
+        TimelyData(origTime: "2024-05-09 11:00:00", time: "2024-05-09 11:00:00", price: 2.59, vatFactor: 1, isToday: true),
+        TimelyData(origTime: "2024-05-09 12:00:00", time: "2024-05-09 12:00:00", price: 2.59, vatFactor: 1, isToday: true),
+        TimelyData(origTime: "2024-05-09 13:00:00", time: "2024-05-09 13:00:00", price: 1.15, vatFactor: 1, isToday: true),
+        TimelyData(origTime: "2024-05-09 14:00:00", time: "2024-05-09 14:00:00", price: 0.63, vatFactor: 1, isToday: true),
+        TimelyData(origTime: "2024-05-09 15:00:00", time: "2024-05-09 15:00:00", price: 0.59, vatFactor: 1, isToday: true),
+        TimelyData(origTime: "2024-05-09 16:00:00", time: "2024-05-09 16:00:00", price: 0.59, vatFactor: 1, isToday: true),
+        TimelyData(origTime: "2024-05-09 17:00:00", time: "2024-05-09 17:00:00", price: 0.9, vatFactor: 1, isToday: true),
+        TimelyData(origTime: "2024-05-09 18:00:00", time: "2024-05-09 18:00:00", price: 2.59, vatFactor: 1, isToday: true),
+        TimelyData(origTime: "2024-05-09 19:00:00", time: "2024-05-09 19:00:00", price: 2.59, vatFactor: 1, isToday: true),
+        TimelyData(origTime: "2024-05-09 20:00:00", time: "2024-05-09 20:00:00", price: 1.53, vatFactor: 1, isToday: true),
+        TimelyData(origTime: "2024-05-09 21:00:00", time: "2024-05-09 21:00:00", price: 1.06, vatFactor: 1, isToday: true),
+        TimelyData(origTime: "2024-05-09 22:00:00", time: "2024-05-09 22:00:00", price: 0.85, vatFactor: 1, isToday: true),
+        TimelyData(origTime: "2024-05-09 23:00:00", time: "2024-05-09 23:00:00", price: 0.72, vatFactor: 1, isToday: true),
     ]
 )
 

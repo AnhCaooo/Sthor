@@ -22,6 +22,7 @@ struct HomeView: View {
                     )
                     
                     // MARK: Current exchange price chart
+                    CurrentPriceView()
                     
                     // MARK: Electric situation in Finland/ countries
                     

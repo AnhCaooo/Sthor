@@ -2,44 +2,18 @@
 //  CardView.swift
 //  Sthor
 //
-//  Created by Anh Cao on 9.5.2024.
+//  Created by Anh Cao on 11.5.2024.
 //
 
 import SwiftUI
 
+// TODO: implement card view to improve UI pov
 struct CardView: View {
-    let priceResponse: PriceResponse
     var body: some View {
-        VStack {
-            HStack{
-                Text("Exchange price of electric now")
-                Spacer()
-            }
-            Spacer()
-            HStack {
-                VStack {
-                    Text("0.05")
-                    Text(priceResponse.data.series[0].name)
-                }
-                Spacer()
-                MiniBarChart(receivedData: electricResponsePreviewData)
-            }
-            .font(.caption)
-        }
-        .padding()
-        
-        
+        Text("Hello, World!")
     }
 }
 
-
-struct CardView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            CardView(priceResponse: electricResponsePreviewData)
-            CardView(priceResponse: electricResponsePreviewData)
-                .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
-        }
-        
-    }
+#Preview {
+    CardView()
 }

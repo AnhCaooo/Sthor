@@ -12,22 +12,24 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             ScrollView(.vertical) {
-                // MARK: Title
-                ScreenHeader(
-                    header: Header(
-                        title: "Dashboard",
-                        subTitle: formatDate(date: currentDate),
-                        horizontalAlignment: .leading)
-                )
-                .padding()
-                
-                LazyVStack(spacing: 10, pinnedViews: [.sectionHeaders]) {
-                    Section {
-                        Text("hello world")
-                    } header: {
-                        
-                    }
+                VStack(spacing: 24) {
+                    // MARK: Title
+                    ScreenHeader(
+                        header: Header(
+                            title: "Dashboard",
+                            subTitle: formatDate(date: currentDate),
+                            horizontalAlignment: .leading)
+                    )
+                    
+                    // MARK: Current exchange price chart
+                    
+                    // MARK: Electric situation in Finland/ countries
+                    
+                    // MARK: Insights view of electric usage
+                    
+                    // MARK: Asking for feedback
                 }
+                .padding()
 
             }
         }

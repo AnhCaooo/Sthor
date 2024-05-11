@@ -11,7 +11,10 @@ struct CardView: View {
     let priceResponse: PriceResponse
     var body: some View {
         VStack {
-            Text("Exchange price of electric now")
+            HStack{
+                Text("Exchange price of electric now")
+                Spacer()
+            }
             Spacer()
             HStack {
                 VStack {
@@ -32,8 +35,12 @@ struct CardView: View {
 
 
 struct CardView_Previews: PreviewProvider {
-    static var priceResponse = PriceResponse.sampleResponseData
     static var previews: some View {
-        CardView(priceResponse: priceResponse)
+        Group {
+            CardView(priceResponse: electricResponsePreviewData)
+            CardView(priceResponse: electricResponsePreviewData)
+                .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+        }
+        
     }
 }

@@ -24,8 +24,8 @@
 		A04C24712BECD58E00372341 /* Electric.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C24702BECD58E00372341 /* Electric.swift */; };
 		A04C24732BECEC0500372341 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C24722BECEC0500372341 /* CardView.swift */; };
 		A0B956E82BEF627C0062C411 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B956E72BEF627C0062C411 /* PreviewData.swift */; };
-		A0B956EB2BEF70400062C411 /* MiniBarChatswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B956EA2BEF70400062C411 /* MiniBarChatswift.swift */; };
 		A0B956ED2BEF70540062C411 /* AdvancedBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B956EC2BEF70540062C411 /* AdvancedBarChart.swift */; };
+		A0B956EF2BEF7AD20062C411 /* MiniBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B956EE2BEF7AD20062C411 /* MiniBarChart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,8 +53,8 @@
 		A04C24702BECD58E00372341 /* Electric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Electric.swift; sourceTree = "<group>"; };
 		A04C24722BECEC0500372341 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		A0B956E72BEF627C0062C411 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
-		A0B956EA2BEF70400062C411 /* MiniBarChatswift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniBarChatswift.swift; sourceTree = "<group>"; };
 		A0B956EC2BEF70540062C411 /* AdvancedBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedBarChart.swift; sourceTree = "<group>"; };
+		A0B956EE2BEF7AD20062C411 /* MiniBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniBarChart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,8 +190,8 @@
 		A0B956E92BEF6EAC0062C411 /* charts */ = {
 			isa = PBXGroup;
 			children = (
-				A0B956EA2BEF70400062C411 /* MiniBarChatswift.swift */,
 				A0B956EC2BEF70540062C411 /* AdvancedBarChart.swift */,
+				A0B956EE2BEF7AD20062C411 /* MiniBarChart.swift */,
 			);
 			path = charts;
 			sourceTree = "<group>";
@@ -266,7 +266,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0B956EB2BEF70400062C411 /* MiniBarChatswift.swift in Sources */,
 				A04C24732BECEC0500372341 /* CardView.swift in Sources */,
 				A0B956ED2BEF70540062C411 /* AdvancedBarChart.swift in Sources */,
 				A03C92BC2BE6A64E0076E4F7 /* ContentView.swift in Sources */,
@@ -277,6 +276,7 @@
 				A02B85E52BE7A7BC00165D53 /* Ui.swift in Sources */,
 				A03C92D12BE6A7B60076E4F7 /* ScreenHeader.swift in Sources */,
 				A02B85E32BE7A6BF00165D53 /* Tab.swift in Sources */,
+				A0B956EF2BEF7AD20062C411 /* MiniBarChart.swift in Sources */,
 				A01E2D0C2BE7AF2D00BFDAC3 /* View+Extenstions.swift in Sources */,
 				A03C92D62BE6A8390076E4F7 /* HomeView.swift in Sources */,
 				A03C92BA2BE6A64E0076E4F7 /* SthorApp.swift in Sources */,

@@ -6,13 +6,34 @@
 //
 
 import SwiftUI
+import Charts
 
 struct MiniBarChatswift: View {
+    let data: PriceResponse
+    var dataSeries = electricResponsePreviewData.data.series[0].data
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Chart {
+            ForEach(dataSeries) {data in
+                BarMark(x: .value("Hour", data.origTime),
+                        y: .value("Price", data.price)
+                )
+            }
+        }
+        .aspectRatio(1, contentMode: .fit)
     }
 }
 
 #Preview {
-    MiniBarChatswift()
+    MiniBarChatswift(data: PriceResponse)
+}
+
+struct CardView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            CardView(priceResponse: electricResponsePreviewData)
+            CardView(priceResponse: electricResponsePreviewData)
+                .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+        }
+        
+    }
 }

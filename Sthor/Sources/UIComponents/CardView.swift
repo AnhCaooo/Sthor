@@ -22,8 +22,7 @@ struct CardView: View {
                     Text(priceResponse.data.series[0].name)
                 }
                 Spacer()
-                Text("charts")
-                    .padding(.trailing, 20)
+                MiniBarChart(receivedData: electricResponsePreviewData)
             }
             .font(.caption)
         }

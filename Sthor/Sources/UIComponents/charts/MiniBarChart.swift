@@ -43,7 +43,6 @@ struct MiniBarChart: View {
                 }
             }
         }
-//        .aspectRatio(1, contentMode: .fit)
         .padding()
     }
 }

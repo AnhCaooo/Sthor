@@ -13,20 +13,37 @@ struct MiniBarChart: View {
     
     var body: some View {
         let dataSeries = receivedData.data.series[0].data
-        Chart {
-            ForEach(dataSeries) {data in
-                BarMark(x: .value("Hour", getHourFromStringDate(dateString: data.origTime)),
-                        y: .value("Price", data.price)
-                )
-            }
+        
+        Chart(dataSeries) {
+            BarMark(x: .value("Hour", getHourFromStringToDate(dateString: $0.origTime)),
+                    y: .value("Price", $0.price)
+            )
+            .accessibilityLabel("Exchange price at \($0.origTime)")
+            .accessibilityValue("\($0.price) cents per kWh")
         }
         .chartPlotStyle { chartContent in
             chartContent
                 .background(Color.secondary.opacity(0.1))
-//                .frame(height: 200)
         }
+        .chartYScale(domain: [0, 20])
         .chartYAxis(.hidden)
-        .aspectRatio(1, contentMode: .fit)
+        .chartXAxis {
+            AxisMarks(values: .stride(by: .hour, count: 6)) { value in
+                if let date = value.as(Date.self) {
+                    let hour = Calendar.current.component(.hour, from: date)
+                    AxisValueLabel(format: .dateTime.hour())
+                    
+                    if hour == 0 {
+                        AxisGridLine(stroke: StrokeStyle(lineWidth: 0))
+                        AxisTick(stroke: StrokeStyle(lineWidth: 0.5))
+                    } else {
+                        AxisGridLine()
+                        AxisTick()
+                    }
+                }
+            }
+        }
+//        .aspectRatio(1, contentMode: .fit)
         .padding()
     }
 }

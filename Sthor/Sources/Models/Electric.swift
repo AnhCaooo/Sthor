@@ -47,7 +47,7 @@ struct PriceRequest {
 }
 
 
-func getHourFromStringDate(dateString: String) -> Int {
+func getHourFromStringToDate(dateString: String) -> Date {
     let formatter = DateFormatter()
     // Set the date format string (check and compare the format with backend)
     formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -59,8 +59,5 @@ func getHourFromStringDate(dateString: String) -> Int {
         exit(0)
     }
     
-    let calendar = Calendar.current
-
-    let hour = calendar.component(.hour, from: date)
-    return hour
+    return date
 }

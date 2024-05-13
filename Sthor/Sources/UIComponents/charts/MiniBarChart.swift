@@ -9,17 +9,19 @@ import SwiftUI
 import Charts
 
 struct MiniBarChart: View {
-    var receivedData: PriceResponse
+    var receivedData: PriceSeries
     
     var body: some View {
-        let dataSeries = receivedData.data.series[0].data
+        // TODO: any ways to optimize these declarations?
+        let unit = receivedData.name
+        let dataSeries = receivedData.data
         
         Chart(dataSeries) {
             BarMark(x: .value("Hour", getHourFromStringToDate(dateString: $0.origTime)),
                     y: .value("Price", $0.price)
             )
             .accessibilityLabel("Exchange price at \($0.origTime)")
-            .accessibilityValue("\($0.price) cents per kWh")
+            .accessibilityValue("\($0.price) \(unit)")
         }
         .chartPlotStyle { chartContent in
             chartContent
@@ -49,6 +51,6 @@ struct MiniBarChart: View {
 
 struct MiniBarChartView_Previews: PreviewProvider {
     static var previews: some View {
-        MiniBarChart(receivedData: electricResponsePreviewData)
+        MiniBarChart(receivedData: electricResponsePreviewData.data.series[0])
     }
 }

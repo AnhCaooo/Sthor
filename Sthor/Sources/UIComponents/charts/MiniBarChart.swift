@@ -20,6 +20,8 @@ struct MiniBarChart: View {
             BarMark(x: .value("Hour", getHourFromStringToDate(dateString: $0.origTime)),
                     y: .value("Price", $0.price)
             )
+            // MARK: Learn how to make the opacity change dynamically. The higher price, the darken color
+//            .opacity(0)
             .accessibilityLabel("Exchange price at \($0.origTime)")
             .accessibilityValue("\($0.price) \(unit)")
         }
@@ -27,7 +29,7 @@ struct MiniBarChart: View {
             chartContent
                 .background(Color.secondary.opacity(0.1))
         }
-        .chartYScale(domain: [0, 20])
+        .chartYScale(domain: [0, 30])
         .chartYAxis(.hidden)
         .chartXAxis {
             AxisMarks(values: .stride(by: .hour, count: 6)) { value in

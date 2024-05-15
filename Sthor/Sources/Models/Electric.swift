@@ -46,6 +46,16 @@ struct PriceRequest {
     let comparedToLastYear: Int32
 }
 
+struct TodayTomorrowPrices {
+    let today: DailyPrice
+    let tomorrow: DailyPrice
+}
+
+struct DailyPrice {
+    let available: Bool
+    let prices: PriceSeries
+}
+
 
 func getHourFromStringToDate(dateString: String) -> Date {
     let formatter = DateFormatter()

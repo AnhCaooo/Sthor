@@ -7,6 +7,7 @@
 import Foundation
 import SwiftUI
 
+// MARK: Price for 1 day that contains prices for 24 hours in a day
 let samplePriceSeries = PriceSeries(
     name: "c/kWh",
     data: [
@@ -37,10 +38,26 @@ let samplePriceSeries = PriceSeries(
     ]
 )
 
+let sameTomorrowPricesNotAvailable = PriceSeries(
+    name: "c/kWh",
+    data: []
+)
+
 let electricResponsePreviewData = PriceResponse(
     status: "success",
     data: PriceData(
         group: "hour",
         series: [PriceSeries](repeating: samplePriceSeries, count: 1)
+    )
+)
+
+let sampleTodayPricesOnly = TodayTomorrowPrices(
+    today: DailyPrice(
+        available: true,
+        prices: samplePriceSeries
+    ),
+    tomorrow: DailyPrice(
+        available: false,
+        prices: sameTomorrowPricesNotAvailable
     )
 )

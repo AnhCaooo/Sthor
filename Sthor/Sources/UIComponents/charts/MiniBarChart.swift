@@ -7,7 +7,7 @@
 
 import SwiftUI
 import Charts
-
+// todo: put the header of the bar chart
 struct MiniBarChart: View {
     var receivedData: PriceSeries
     
@@ -20,17 +20,12 @@ struct MiniBarChart: View {
             BarMark(x: .value("Hour", getHourFromStringToDate(dateString: $0.origTime)),
                     y: .value("Price", $0.price)
             )
-            // MARK: Learn how to make the opacity change dynamically. The higher price, the darken color
-//            .opacity(0)
+            .foregroundStyle(.barChart)
             .accessibilityLabel("Exchange price at \($0.origTime)")
             .accessibilityValue("\($0.price) \(unit)")
         }
-        .chartPlotStyle { chartContent in
-            chartContent
-                .background(Color.secondary.opacity(0.1))
-        }
+        // TODO: mark the Y scale more dynamic
         .chartYScale(domain: [0, 30])
-        .chartYAxis(.hidden)
         .chartXAxis {
             AxisMarks(values: .stride(by: .hour, count: 6)) { value in
                 if let date = value.as(Date.self) {
@@ -47,9 +42,11 @@ struct MiniBarChart: View {
                 }
             }
         }
+        .aspectRatio(16/9, contentMode: .fit)
         .padding()
     }
 }
+
 
 struct MiniBarChartView_Previews: PreviewProvider {
     static var previews: some View {

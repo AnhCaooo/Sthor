@@ -29,7 +29,7 @@ let samplePriceSeries = PriceSeries(
         TimelyData(origTime: "2024-05-09 15:00:00", time: "2024-05-09 15:00:00", price: 0.59, vatFactor: 1, isToday: true),
         TimelyData(origTime: "2024-05-09 16:00:00", time: "2024-05-09 16:00:00", price: 0.59, vatFactor: 1, isToday: true),
         TimelyData(origTime: "2024-05-09 17:00:00", time: "2024-05-09 17:00:00", price: 0.9, vatFactor: 1, isToday: true),
-        TimelyData(origTime: "2024-05-09 18:00:00", time: "2024-05-09 18:00:00", price: 2.59, vatFactor: 1, isToday: true),
+        TimelyData(origTime: "2024-05-09 18:00:00", time: "2024-05-09 18:00:00", price: -2, vatFactor: 1, isToday: true),
         TimelyData(origTime: "2024-05-09 19:00:00", time: "2024-05-09 19:00:00", price: 2.59, vatFactor: 1, isToday: true),
         TimelyData(origTime: "2024-05-09 20:00:00", time: "2024-05-09 20:00:00", price: 1.53, vatFactor: 1, isToday: true),
         TimelyData(origTime: "2024-05-09 21:00:00", time: "2024-05-09 21:00:00", price: 1.06, vatFactor: 1, isToday: true),

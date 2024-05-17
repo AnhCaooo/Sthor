@@ -10,12 +10,12 @@ import Charts
 // TODO: put the header of the bar chart
 // TODO: handle value if it is too low (-200) or too hight (220)
 struct MiniExchangePricesBarChart: View {
-    var receivedData: PriceSeries
+    var data: PriceSeries
     
     var body: some View {
         // TODO: any ways to optimize these declarations?
-        let unit = receivedData.name
-        let dataSeries = receivedData.data
+        let unit = data.name
+        let dataSeries = data.data
         
         Chart(dataSeries) {
             BarMark(x: .value("Hour", getHourFromStringToDate(dateString: $0.origTime)),
@@ -54,7 +54,7 @@ struct MiniExchangePricesBarChart: View {
 
 struct MiniBarChartView_Previews: PreviewProvider {
     static var previews: some View {
-        MiniExchangePricesBarChart(receivedData: sampleTodayPricesOnly.today.prices)
+        MiniExchangePricesBarChart(data: sampleTodayPricesOnly.today.prices)
             .frame(height: 50)
     }
 }

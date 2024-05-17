@@ -7,7 +7,8 @@
 
 import SwiftUI
 import Charts
-// todo: put the header of the bar chart
+// TODO: put the header of the bar chart
+// TODO: handle value if it is too low (-200) or too hight (220)
 struct MiniExchangePricesBarChart: View {
     var receivedData: PriceSeries
     
@@ -44,16 +45,16 @@ struct MiniExchangePricesBarChart: View {
             }
         }
         .chartPlotStyle { plotArea in
-            plotArea.background(.barChart.opacity(0.1))
+            plotArea.background(.barChart.opacity(0.05))
         }
-        .aspectRatio(16/9, contentMode: .fit)
-        .padding()
+
     }
 }
 
 
 struct MiniBarChartView_Previews: PreviewProvider {
     static var previews: some View {
-        MiniExchangePricesBarChart(receivedData: electricResponsePreviewData.data.series[0])
+        MiniExchangePricesBarChart(receivedData: sampleTodayPricesOnly.today.prices)
+            .frame(height: 50)
     }
 }

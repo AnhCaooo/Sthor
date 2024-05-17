@@ -28,9 +28,9 @@ struct CurrentPriceView: View {
                 VStack{
                     // TODO: The price of next day often available around 3pm. Shall we consider to polling the backend from 14:30 - 15:30 after every 10 minutes
                     // todo: pass title as parameter to mini chartbar
-                    MiniBarChart(receivedData: priceResponse.today.prices)
+                    MiniExchangePricesBarChart(receivedData: priceResponse.today.prices)
                     if priceResponse.tomorrow.available {
-                        MiniBarChart(receivedData: priceResponse.tomorrow.prices)
+                        MiniExchangePricesBarChart(receivedData: priceResponse.tomorrow.prices)
                     } else {
                         // TODO: Consider for later if we decide to support different languages
                         HStack {

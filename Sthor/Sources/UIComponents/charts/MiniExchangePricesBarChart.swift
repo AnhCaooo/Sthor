@@ -8,7 +8,7 @@
 import SwiftUI
 import Charts
 // todo: put the header of the bar chart
-struct MiniBarChart: View {
+struct MiniExchangePricesBarChart: View {
     var receivedData: PriceSeries
     
     var body: some View {
@@ -26,6 +26,7 @@ struct MiniBarChart: View {
         }
         // TODO: mark the Y scale more dynamic
         .chartYScale(domain: [0, 30])
+        .chartYAxis(.hidden)
         .chartXAxis {
             AxisMarks(values: .stride(by: .hour, count: 6)) { value in
                 if let date = value.as(Date.self) {
@@ -42,6 +43,9 @@ struct MiniBarChart: View {
                 }
             }
         }
+        .chartPlotStyle { plotArea in
+            plotArea.background(.barChart.opacity(0.1))
+        }
         .aspectRatio(16/9, contentMode: .fit)
         .padding()
     }
@@ -50,6 +54,6 @@ struct MiniBarChart: View {
 
 struct MiniBarChartView_Previews: PreviewProvider {
     static var previews: some View {
-        MiniBarChart(receivedData: electricResponsePreviewData.data.series[0])
+        MiniExchangePricesBarChart(receivedData: electricResponsePreviewData.data.series[0])
     }
 }

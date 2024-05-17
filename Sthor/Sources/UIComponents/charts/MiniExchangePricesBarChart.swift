@@ -7,7 +7,7 @@
 
 import SwiftUI
 import Charts
-// TODO: put the header of the bar chart
+
 // TODO: handle value if it is too low (-200) or too hight (220)
 struct MiniExchangePricesBarChart: View {
     var data: PriceSeries

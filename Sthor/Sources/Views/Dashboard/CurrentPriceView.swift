@@ -7,9 +7,8 @@
 
 import SwiftUI
 
-// todo: put all the content into a card
 struct CurrentPriceView: View {
-    let priceResponse: TodayTomorrowPrices = sampleTodayPricesOnly
+    let price: TodayTomorrowPrices = sampleTodayPricesOnly
     var body: some View {
         GroupBox("Exchange price of electric now") {
             HStack {
@@ -19,7 +18,7 @@ struct CurrentPriceView: View {
                         Text("0.05")
                             .font(.title)
                             .bold()
-                        Text(priceResponse.today.prices.name)
+                        Text(price.today.prices.name)
                     }
                     .frame(maxWidth: 100, alignment: .center)
                     
@@ -27,11 +26,18 @@ struct CurrentPriceView: View {
                 Spacer()
                 VStack{
                     // TODO: The price of next day often available around 3pm. Shall we consider to polling the backend from 14:30 - 15:30 after every 10 minutes
-                    // todo: pass title as parameter to mini chartbar
-                    MiniExchangePricesBarChart(data: priceResponse.today.prices)
-                        .frame(height: 50)
-                    if priceResponse.tomorrow.available {
-                        MiniExchangePricesBarChart(data: priceResponse.tomorrow.prices)
+                    if price.today.available {
+                        MiniExchangePricesBarChart(data: price.today.prices)
+                            .frame(height: 50)
+                    } else {
+                        // TODO: Consider for later if we decide to support different languages
+                        HStack {
+                            Text("Today's prices are not available yet")
+                        }
+                    }
+                    
+                    if price.tomorrow.available {
+                        MiniExchangePricesBarChart(data: price.tomorrow.prices)
                             .frame(height: 50)
                     } else {
                         // TODO: Consider for later if we decide to support different languages
@@ -39,9 +45,7 @@ struct CurrentPriceView: View {
                             Text("Tomorrow's prices are not available yet")
                         }
                     }
-                    
                 }
-                
             }
             .font(.caption)
         }

@@ -33,6 +33,7 @@ struct CurrentPriceView: View {
                         // TODO: Consider for later if we decide to support different languages
                         HStack {
                             Text("Today's prices are not available yet")
+                            Spacer()
                         }
                     }
                     
@@ -43,11 +44,13 @@ struct CurrentPriceView: View {
                         // TODO: Consider for later if we decide to support different languages
                         HStack {
                             Text("Tomorrow's prices are not available yet")
+                            Spacer()
                         }
                     }
                 }
             }
             .font(.caption)
+            .frame(maxHeight: 150)
         }
     }
 }

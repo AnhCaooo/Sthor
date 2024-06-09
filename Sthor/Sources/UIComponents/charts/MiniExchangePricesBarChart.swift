@@ -18,7 +18,7 @@ struct MiniExchangePricesBarChart: View {
         let dataSeries = data.data
         
         Chart(dataSeries) {
-            BarMark(x: .value("Hour", getHourFromStringToDate(dateString: $0.origTime)),
+            BarMark(x: .value("Hour", getHourFromStringToDate(dateString: $0.origTime), unit: .hour),
                     y: .value("Price", $0.price)
             )
             .foregroundStyle(.barChart)

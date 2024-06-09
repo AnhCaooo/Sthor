@@ -37,7 +37,7 @@ struct TimelyData: Codable, Identifiable {
     }
 }
 
-struct PriceRequest {
+struct PriceRequest: Codable {
     let startDate: String
     let endDate: String
     let marginal: Float64
@@ -46,12 +46,12 @@ struct PriceRequest {
     let comparedToLastYear: Int32
 }
 
-struct TodayTomorrowPrices {
+struct TodayTomorrowPrices: Codable {
     let today: DailyPrice
     let tomorrow: DailyPrice
 }
 
-struct DailyPrice {
+struct DailyPrice: Codable {
     let available: Bool
     let prices: PriceSeries
 }

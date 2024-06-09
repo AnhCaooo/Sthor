@@ -41,6 +41,7 @@ class ElectricService {
             
             do {
                 let decodedResponse = try JSONDecoder().decode(TodayTomorrowPrices.self, from: data)
+                print("[electric service] fetch today & tomorrow price successfully")
                 completion(.success(decodedResponse))
             } catch {
                 completion(.failure(error))

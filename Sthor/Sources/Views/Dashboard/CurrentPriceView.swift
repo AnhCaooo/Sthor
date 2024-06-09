@@ -12,9 +12,10 @@ struct CurrentPriceView: View {
     @StateObject var viewModel: CurrentPriceViewModel = CurrentPriceViewModel()
     
     var body: some View {
-        VStack{
-            if let prices = viewModel.currentPrices {
-                GroupBox("Exchange price of electric now") {
+
+        GroupBox("Exchange price of electric now") {
+            VStack{
+                if let prices = viewModel.currentPrices {
                     HStack {
                         // TODO: get the current price at the time user open this application. Maybe just mapping the current time with the data got from backend is better than backend return this?
                         VStack {
@@ -55,13 +56,15 @@ struct CurrentPriceView: View {
                     }
                     .font(.caption)
                     .frame(maxHeight: 150)
+                } else {
+                    // todo: loading button
+                    VStack{
+                        SpinnerView(title: "Loading . . .")
+                    }
                 }
-            } else {
-                // todo: loading button
-                Text("Price data not available yet")
             }
+            
         }
-        
     }
 }
 

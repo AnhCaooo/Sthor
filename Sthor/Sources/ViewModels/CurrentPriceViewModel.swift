@@ -19,8 +19,8 @@ class CurrentPriceViewModel: ObservableObject {
     func getCurrentExchangePrices() {
         electricService.GetTodayTomorrowPrices { result in
             switch result {
-            case .success(let info):
-                self.currentPrices = info
+            case .success(let resp):
+                self.currentPrices = resp
             case .failure(let error):
                 print("fail to get today and tomorrow price. Error: ", error)
             }

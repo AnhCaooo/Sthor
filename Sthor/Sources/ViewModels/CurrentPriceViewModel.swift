@@ -5,14 +5,25 @@
 //  Created by Anh Cao on 9.6.2024.
 //
 
-import SwiftUI
+import Foundation
+import Combine
 
-struct CurrentPriceViewModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+class CurrentPriceViewModel: ObservableObject {
+    @Published var currentPrices: TodayTomorrowPrices? = nil
+    private let electricService = ElectricService()
+        
+    init() {
+        getCurrentExchangePrices()
     }
-}
-
-#Preview {
-    CurrentPriceViewModel()
+    
+    func getCurrentExchangePrices() {
+        electricService.GetTodayTomorrowPrices { result in
+            switch result {
+            case .success(let info):
+                self.currentPrices = info
+            case .failure(let error):
+                print("fail to get today and tomorrow price. Error: ", error)
+            }
+        }
+    }
 }

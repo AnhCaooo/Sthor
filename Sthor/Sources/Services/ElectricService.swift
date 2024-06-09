@@ -7,35 +7,47 @@
 
 import Foundation
 
-let BASE_URL = "http://18.196.26.135"
-let ELECTRIC_SERVICE = "/stormbreaker"
-let CURRENT_EXCHANGE_PRICES = "/v1/market-price/today-tomorrow"
-
-func GetCurrentExchangePrices() {
-    guard let url = URL(string: BASE_URL + ELECTRIC_SERVICE + CURRENT_EXCHANGE_PRICES) else {
-        print("Invalid URL")
-        return
-    }
-    var request = URLRequest(url: url)
-    request.httpMethod = "GET"  // optional
-    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+class ElectricService {
+    let BASE_URL = "http://18.196.26.135"
+    let ELECTRIC_SERVICE = "/stormbreaker"
+    let CURRENT_EXCHANGE_PRICES = "/v1/market-price/today-tomorrow"
     
-    let task = URLSession.shared.dataTask(with: request){ data, response, error in
-        if let error = error {
-            print("Error while fetching data:", error)
-            return
-        }
-        
-        guard let data = data else {
+    func GetTodayTomorrowPrices(completion: @escaping(Result<TodayTomorrowPrices, Error>) -> Void) {
+
+        guard let url = URL(string: BASE_URL + ELECTRIC_SERVICE + CURRENT_EXCHANGE_PRICES) else {
+            print("Invalid URL")
             return
         }
 
-        do {
-            let response = try JSONDecoder().decode(TodayTomorrowPrices.self, from: data)
-            print("response", response)
-        } catch let jsonError {
-            print("Failed to decode json", jsonError)
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let task = URLSession.shared.dataTask(with: request){ data, response, error in
+            if let error = error {
+                print("client error")
+                print("Error while fetching data:", error)
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+                print("server error")
+                return
+            }
+            
+            guard let data = data else {
+                return
+            }
+            
+            do {
+                let decodedResponse = try JSONDecoder().decode(TodayTomorrowPrices.self, from: data)
+                completion(.success(decodedResponse))
+            } catch {
+                completion(.failure(error))
+            }
         }
+        task.resume()
     }
-    task.resume()
+    
+
 }

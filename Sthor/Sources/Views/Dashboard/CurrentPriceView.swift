@@ -9,12 +9,17 @@ import SwiftUI
 
 struct CurrentPriceView: View {
 //    let price: TodayTomorrowPrices = sampleTodayPricesOnly
-    @StateObject var viewModel: CurrentPriceViewModel = CurrentPriceViewModel()
+    @StateObject var viewModel = CurrentPriceViewModel()
     
     var body: some View {
 
         GroupBox("Exchange price of electric now") {
-            VStack{
+            switch viewModel.currentPriceState {
+            case .loading:
+                SpinnerView(title: "Loading . . .")
+            case .failure:
+                Text(viewModel.errorMessage)
+            case .success:
                 if let prices = viewModel.currentPrices {
                     HStack {
                         VStack {
@@ -55,11 +60,8 @@ struct CurrentPriceView: View {
                     }
                     .font(.caption)
                     .frame(maxHeight: 150)
-                } else {
-                    SpinnerView(title: "Loading . . .")
                 }
-            }
-            
+            }            
         }
     }
 }

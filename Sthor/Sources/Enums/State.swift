@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+enum NetworkState {
+    case loading
+    case failure
+    case success
+}

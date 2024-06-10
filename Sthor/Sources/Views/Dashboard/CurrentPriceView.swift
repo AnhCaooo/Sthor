@@ -11,14 +11,17 @@ struct CurrentPriceView: View {
     @StateObject var viewModel = CurrentPriceViewModel()
     
     var body: some View {
+        let _ = Self._printChanges()
         GroupBox("Exchange price of electric now") {
             switch viewModel.currentPriceState {
-            case .loading:
-                SpinnerView(title: "Loading . . .")
             case .failure:
                 errorView
-            case .success:
+            default:
                 PriceView(viewModel: viewModel)
+                    .disabled(viewModel.currentPriceState == .success ? false : true)
+                if viewModel.currentPriceState == .loading {
+                    SpinnerView(title: "Loading . . .")
+                }
             }
         }
     }

@@ -37,6 +37,8 @@ class CurrentPriceViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
+    
+    // TODO: implement how to call this function everytime the time is change. For example from 9 to 10, then call. And 10 to 11 then call again to update the view
     // find and return price based on curret time with time format "yyyy-MM-dd HH:00:00".
     // The above format helps to filter out and get the price of current time slot from given data which has similar format
     func getCurrentPrice(todayPrices: PriceSeries) -> String {

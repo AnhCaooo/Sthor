@@ -16,10 +16,16 @@ struct CurrentPriceView: View {
             case .loading:
                 SpinnerView(title: "Loading . . .")
             case .failure:
-                Text(viewModel.errorMessage)
+                errorView
             case .success:
                 PriceView(viewModel: viewModel)
             }
+        }
+    }
+    
+    private var errorView: some View {
+        VStack {
+            Text(viewModel.errorMessage)
         }
     }
 }

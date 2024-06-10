@@ -22,6 +22,8 @@
 		A03C92DA2BE6A86B0076E4F7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03C92D92BE6A86B0076E4F7 /* ProfileView.swift */; };
 		A04C246F2BECD1C300372341 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C246E2BECD1C300372341 /* Theme.swift */; };
 		A04C24712BECD58E00372341 /* Electric.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C24702BECD58E00372341 /* Electric.swift */; };
+		A064EE922C178BED0056B1F6 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = A064EE912C178BED0056B1F6 /* State.swift */; };
+		A064EE942C178E410056B1F6 /* PriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A064EE932C178E410056B1F6 /* PriceView.swift */; };
 		A06B348A2C15E0A7007B2342 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B34892C15E0A7007B2342 /* SpinnerView.swift */; };
 		A07328952BF6A13F0078D70F /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07328942BF6A13F0078D70F /* Color+Extensions.swift */; };
 		A0B956E82BEF627C0062C411 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B956E72BEF627C0062C411 /* PreviewData.swift */; };
@@ -55,6 +57,8 @@
 		A03C92DD2BE6A9350076E4F7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A04C246E2BECD1C300372341 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		A04C24702BECD58E00372341 /* Electric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Electric.swift; sourceTree = "<group>"; };
+		A064EE912C178BED0056B1F6 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		A064EE932C178E410056B1F6 /* PriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceView.swift; sourceTree = "<group>"; };
 		A06B34882C15CF28007B2342 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A06B34892C15E0A7007B2342 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		A07328942BF6A13F0078D70F /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 			children = (
 				A03C92D32BE6A7FB0076E4F7 /* README.md */,
 				A02B85E22BE7A6BF00165D53 /* Tab.swift */,
+				A064EE912C178BED0056B1F6 /* State.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				A0B956F52BEF82FE0062C411 /* CurrentPriceView.swift */,
+				A064EE932C178E410056B1F6 /* PriceView.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -301,6 +307,7 @@
 				A0B956ED2BEF70540062C411 /* AdvancedBarChart.swift in Sources */,
 				A03C92BC2BE6A64E0076E4F7 /* ContentView.swift in Sources */,
 				A01E2D0E2BE7B4B400BFDAC3 /* Date+Extensions.swift in Sources */,
+				A064EE922C178BED0056B1F6 /* State.swift in Sources */,
 				A04C24712BECD58E00372341 /* Electric.swift in Sources */,
 				A0EECDFC2C15A5B400D8934A /* CurrentPriceViewModel.swift in Sources */,
 				A03C92CF2BE6A75D0076E4F7 /* ElectricView.swift in Sources */,
@@ -313,6 +320,7 @@
 				A0B956EF2BEF7AD20062C411 /* MiniExchangePricesBarChart.swift in Sources */,
 				A01E2D0C2BE7AF2D00BFDAC3 /* View+Extenstions.swift in Sources */,
 				A03C92D62BE6A8390076E4F7 /* HomeView.swift in Sources */,
+				A064EE942C178E410056B1F6 /* PriceView.swift in Sources */,
 				A03C92BA2BE6A64E0076E4F7 /* SthorApp.swift in Sources */,
 				A04C246F2BECD1C300372341 /* Theme.swift in Sources */,
 				A07328952BF6A13F0078D70F /* Color+Extensions.swift in Sources */,

@@ -9,8 +9,8 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var currentDate = Date()
+    let formatter = DateFormatter()
     var body: some View {
-        let formatter = DateFormatter()
         NavigationStack {
             ScrollView(.vertical) {
                 VStack(spacing: 24) {

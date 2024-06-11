@@ -8,6 +8,12 @@
 import SwiftUI
 
 extension DateFormatter {
+    func formatDateToString(date: Date, format: String? = "EEEE, d'th' MMMM yyyy") -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        return formatter.string(from: date)
+    }
+    
     func parseStringToDate(date: String) -> Date {
         print("dateString", date)
         let formatter = DateFormatter()

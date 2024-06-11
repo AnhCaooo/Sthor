@@ -44,9 +44,7 @@ class CurrentPriceViewModel: ObservableObject {
     func getCurrentPrice(todayPrices: PriceSeries) -> String {
         var currentPrice = "n/a"
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:00:00"
-        
-        let currentTimeInString = formatter.string(from: Date())
+        let currentTimeInString = formatter.getCurrentTimeWithDateAndHourOnly()
         
         if let filteredData = todayPrices.data.first(where: { $0.time == currentTimeInString}) {
             

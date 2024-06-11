@@ -5,7 +5,7 @@
 //  Created by Anh Cao on 5.5.2024.
 //
 
-import SwiftUI
+import Foundation
 
 extension DateFormatter {
     func formatDateToString(date: Date, format: String? = "EEEE, d'th' MMMM yyyy") -> String {
@@ -15,7 +15,6 @@ extension DateFormatter {
     }
     
     func parseStringToDate(date: String) -> Date {
-        print("dateString", date)
         let formatter = DateFormatter()
         // Set the date format string (check and compare the format with backend)
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"

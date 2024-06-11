@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @State private var currentDate = Date()
     var body: some View {
+        let formatter = DateFormatter()
         NavigationStack {
             ScrollView(.vertical) {
                 VStack(spacing: 24) {
@@ -17,7 +18,7 @@ struct HomeView: View {
                     ScreenHeader(
                         header: Header(
                             title: "Dashboard",
-                            subTitle: formatDate(date: currentDate),
+                            subTitle: formatter.formatDateToString(date: currentDate),
                             horizontalAlignment: .leading)
                     )
                     

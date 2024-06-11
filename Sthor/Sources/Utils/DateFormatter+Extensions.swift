@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension Date {
+extension DateFormatter {
     func parseStringToDate(date: String) -> Date {
         print("dateString", date)
         let formatter = DateFormatter()

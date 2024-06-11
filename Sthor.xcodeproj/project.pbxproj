@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A01E2D0C2BE7AF2D00BFDAC3 /* View+Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01E2D0B2BE7AF2D00BFDAC3 /* View+Extenstions.swift */; };
-		A01E2D0E2BE7B4B400BFDAC3 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01E2D0D2BE7B4B400BFDAC3 /* Date+Extensions.swift */; };
+		A01E2D0E2BE7B4B400BFDAC3 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01E2D0D2BE7B4B400BFDAC3 /* DateFormatter+Extensions.swift */; };
 		A02B85E32BE7A6BF00165D53 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02B85E22BE7A6BF00165D53 /* Tab.swift */; };
 		A02B85E52BE7A7BC00165D53 /* Ui.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02B85E42BE7A7BC00165D53 /* Ui.swift */; };
 		A03C92BA2BE6A64E0076E4F7 /* SthorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03C92B92BE6A64E0076E4F7 /* SthorApp.swift */; };
@@ -36,7 +36,7 @@
 
 /* Begin PBXFileReference section */
 		A01E2D0B2BE7AF2D00BFDAC3 /* View+Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extenstions.swift"; sourceTree = "<group>"; };
-		A01E2D0D2BE7B4B400BFDAC3 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		A01E2D0D2BE7B4B400BFDAC3 /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		A02B85E22BE7A6BF00165D53 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		A02B85E42BE7A7BC00165D53 /* Ui.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ui.swift; sourceTree = "<group>"; };
 		A03C92B62BE6A64E0076E4F7 /* Sthor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sthor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,7 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				A01E2D0B2BE7AF2D00BFDAC3 /* View+Extenstions.swift */,
-				A01E2D0D2BE7B4B400BFDAC3 /* Date+Extensions.swift */,
+				A01E2D0D2BE7B4B400BFDAC3 /* DateFormatter+Extensions.swift */,
 				A07328942BF6A13F0078D70F /* Color+Extensions.swift */,
 			);
 			path = Utils;
@@ -306,7 +306,7 @@
 			files = (
 				A0B956ED2BEF70540062C411 /* AdvancedBarChart.swift in Sources */,
 				A03C92BC2BE6A64E0076E4F7 /* ContentView.swift in Sources */,
-				A01E2D0E2BE7B4B400BFDAC3 /* Date+Extensions.swift in Sources */,
+				A01E2D0E2BE7B4B400BFDAC3 /* DateFormatter+Extensions.swift in Sources */,
 				A064EE922C178BED0056B1F6 /* State.swift in Sources */,
 				A04C24712BECD58E00372341 /* Electric.swift in Sources */,
 				A0EECDFC2C15A5B400D8934A /* CurrentPriceViewModel.swift in Sources */,

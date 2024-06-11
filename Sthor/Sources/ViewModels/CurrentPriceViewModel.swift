@@ -43,8 +43,8 @@ class CurrentPriceViewModel: ObservableObject {
     // The above format helps to filter out and get the price of current time slot from given data which has similar format
     func getCurrentPrice(todayPrices: PriceSeries) -> String {
         var currentPrice = "n/a"
-        let date = Date()
-        let currentTimeInString = date.getCurrentTimeWithDateAndHourOnly()
+        let formatter = DateFormatter()
+        let currentTimeInString = formatter.getCurrentTimeWithDateAndHourOnly()
         
         if let filteredData = todayPrices.data.first(where: { $0.time == currentTimeInString}) {
             

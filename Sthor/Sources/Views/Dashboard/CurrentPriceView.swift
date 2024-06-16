@@ -12,18 +12,22 @@ struct CurrentPriceView: View {
     
     var body: some View {
         let _ = Self._printChanges()
-        GroupBox("Exchange price of electric now") {
-            switch viewModel.currentPriceState {
-            case .failure:
-                errorView
-            default:
-                PriceView(viewModel: viewModel)
-                    .disabled(viewModel.currentPriceState == .success ? false : true)
-                if viewModel.currentPriceState == .loading {
-                    SpinnerView(title: "Loading . . .")
+
+        NavigationLink(destination: ElectricView()) {
+            GroupBox("Exchange price of electric now") {
+                switch viewModel.currentPriceState {
+                case .failure:
+                    errorView
+                default:
+                    PriceView(viewModel: viewModel)
+                        .disabled(viewModel.currentPriceState == .success ? false : true)
+                    if viewModel.currentPriceState == .loading {
+                        SpinnerView(title: "Loading . . .")
+                    }
                 }
             }
-        }
+        }.buttonStyle(PlainButtonStyle())
+        
     }
     
     private var errorView: some View {

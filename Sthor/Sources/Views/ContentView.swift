@@ -16,22 +16,7 @@ struct ContentView: View {
                 .tabItem{
                     Label("Home", systemImage: "house")
                 }
-                .tag(Tab.home)
-
-            
-            ElectricView()
-                .tabItem{
-                    Label("Electric", systemImage: "bolt")
-                }
-                .tag(Tab.electric)
-            
-            
-            NotificationsView()
-                .tabItem{
-                    Label("Notifications", systemImage: "bell")
-                }
-                .tag(Tab.notifications)
-            
+                .tag(Tab.home)            
             
             ProfileView()
                 .tabItem{

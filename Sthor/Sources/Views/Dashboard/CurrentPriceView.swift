@@ -26,7 +26,8 @@ struct CurrentPriceView: View {
                     }
                 }
             }
-        }.buttonStyle(PlainButtonStyle())
+        }
+        .buttonStyle(PlainButtonStyle())
         
     }
     

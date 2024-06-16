@@ -21,6 +21,8 @@ struct ElectricView: View {
                 .padding(15)
             }
         }
+        .navigationTitle("Electric")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

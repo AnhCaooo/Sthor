@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A01E2D0C2BE7AF2D00BFDAC3 /* View+Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01E2D0B2BE7AF2D00BFDAC3 /* View+Extenstions.swift */; };
 		A01E2D0E2BE7B4B400BFDAC3 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01E2D0D2BE7B4B400BFDAC3 /* DateFormatter+Extensions.swift */; };
-		A02B85E32BE7A6BF00165D53 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02B85E22BE7A6BF00165D53 /* Tab.swift */; };
 		A02B85E52BE7A7BC00165D53 /* Ui.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02B85E42BE7A7BC00165D53 /* Ui.swift */; };
 		A03C92BA2BE6A64E0076E4F7 /* SthorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03C92B92BE6A64E0076E4F7 /* SthorApp.swift */; };
 		A03C92BC2BE6A64E0076E4F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03C92BB2BE6A64E0076E4F7 /* ContentView.swift */; };
@@ -30,6 +29,7 @@
 		A0B956ED2BEF70540062C411 /* AdvancedBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B956EC2BEF70540062C411 /* AdvancedBarChart.swift */; };
 		A0B956EF2BEF7AD20062C411 /* MiniExchangePricesBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B956EE2BEF7AD20062C411 /* MiniExchangePricesBarChart.swift */; };
 		A0B956F62BEF82FE0062C411 /* CurrentPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B956F52BEF82FE0062C411 /* CurrentPriceView.swift */; };
+		A0D527B72C1F5D7C00EF78FE /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D527B62C1F5D7C00EF78FE /* Tab.swift */; };
 		A0EECDF92C159C4200D8934A /* ElectricService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EECDF82C159C4200D8934A /* ElectricService.swift */; };
 		A0EECDFC2C15A5B400D8934A /* CurrentPriceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EECDFB2C15A5B400D8934A /* CurrentPriceViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -37,7 +37,6 @@
 /* Begin PBXFileReference section */
 		A01E2D0B2BE7AF2D00BFDAC3 /* View+Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extenstions.swift"; sourceTree = "<group>"; };
 		A01E2D0D2BE7B4B400BFDAC3 /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
-		A02B85E22BE7A6BF00165D53 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		A02B85E42BE7A7BC00165D53 /* Ui.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ui.swift; sourceTree = "<group>"; };
 		A03C92B62BE6A64E0076E4F7 /* Sthor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sthor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A03C92B92BE6A64E0076E4F7 /* SthorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SthorApp.swift; sourceTree = "<group>"; };
@@ -66,6 +65,7 @@
 		A0B956EC2BEF70540062C411 /* AdvancedBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedBarChart.swift; sourceTree = "<group>"; };
 		A0B956EE2BEF7AD20062C411 /* MiniExchangePricesBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniExchangePricesBarChart.swift; sourceTree = "<group>"; };
 		A0B956F52BEF82FE0062C411 /* CurrentPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPriceView.swift; sourceTree = "<group>"; };
+		A0D527B62C1F5D7C00EF78FE /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		A0EECDF52C159A8A00D8934A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A0EECDF82C159C4200D8934A /* ElectricService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectricService.swift; sourceTree = "<group>"; };
 		A0EECDFB2C15A5B400D8934A /* CurrentPriceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPriceViewModel.swift; sourceTree = "<group>"; };
@@ -161,8 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				A03C92D32BE6A7FB0076E4F7 /* README.md */,
-				A02B85E22BE7A6BF00165D53 /* Tab.swift */,
 				A064EE912C178BED0056B1F6 /* State.swift */,
+				A0D527B62C1F5D7C00EF78FE /* Tab.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -316,12 +316,12 @@
 				A0EECDF92C159C4200D8934A /* ElectricService.swift in Sources */,
 				A03C92D12BE6A7B60076E4F7 /* ScreenHeader.swift in Sources */,
 				A0B956F62BEF82FE0062C411 /* CurrentPriceView.swift in Sources */,
-				A02B85E32BE7A6BF00165D53 /* Tab.swift in Sources */,
 				A0B956EF2BEF7AD20062C411 /* MiniExchangePricesBarChart.swift in Sources */,
 				A01E2D0C2BE7AF2D00BFDAC3 /* View+Extenstions.swift in Sources */,
 				A03C92D62BE6A8390076E4F7 /* HomeView.swift in Sources */,
 				A064EE942C178E410056B1F6 /* PriceView.swift in Sources */,
 				A03C92BA2BE6A64E0076E4F7 /* SthorApp.swift in Sources */,
+				A0D527B72C1F5D7C00EF78FE /* Tab.swift in Sources */,
 				A04C246F2BECD1C300372341 /* Theme.swift in Sources */,
 				A07328952BF6A13F0078D70F /* Color+Extensions.swift in Sources */,
 				A03C92DA2BE6A86B0076E4F7 /* ProfileView.swift in Sources */,

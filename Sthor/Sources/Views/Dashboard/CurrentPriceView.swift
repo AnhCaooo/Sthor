@@ -12,7 +12,6 @@ struct CurrentPriceView: View {
     
     var body: some View {
         let _ = Self._printChanges()
-
         NavigationLink(destination: ElectricView()) {
             GroupBox("Exchange price of electric now") {
                 switch viewModel.currentPriceState {

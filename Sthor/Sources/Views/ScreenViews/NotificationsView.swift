@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NotificationsView: View {
+    let header = Header(title: "Notifications", horizontalAlignment: .leading)
      var body: some View {
         NavigationStack {
             ScrollView(.vertical) {
@@ -19,6 +20,21 @@ struct NotificationsView: View {
                     }
                 }
                 .padding(15)
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    ScreenHeader(header: header)
+                }
+                
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        // action
+                        print("open popup modal to edit the notification settings")
+                    } label: {
+                       Text("Edit")
+                    }
+                }
             }
         }
     }

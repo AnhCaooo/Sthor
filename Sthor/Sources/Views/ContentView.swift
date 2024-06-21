@@ -18,6 +18,12 @@ struct ContentView: View {
                 }
                 .tag(Tab.home)
             
+            NotificationsView()
+                .tabItem{
+                    Label("Notifications", systemImage: "bell")
+                }
+                .tag(Tab.notifications)
+            
             ProfileView()
                 .tabItem{
                     Label("Profile", systemImage: "person")

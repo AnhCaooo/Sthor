@@ -10,8 +10,11 @@ import SwiftUI
 struct HomeView: View {
     @State private var currentDate = Date()
     let formatter = DateFormatter()
-    let header = Header(title: "Dashboard", horizontalAlignment: .leading)
+    
     var body: some View {
+        let header = Header( title: "Dashboard",
+//                             subTitle: formatter.formatDateToString(date: currentDate),
+                             horizontalAlignment: .leading)
         NavigationStack {
             ScrollView(.vertical) {
                 VStack(spacing: 24) {
@@ -31,6 +34,16 @@ struct HomeView: View {
                 ToolbarItem(placement: .principal) {
                     ScreenHeader(header: header)
                 }
+                
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        // action
+                        print("open edit modal")
+                    } label: {
+                        Image(systemName: "ellipsis.circle")
+                    }
+                }
+
             }
         }
     }

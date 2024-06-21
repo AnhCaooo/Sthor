@@ -50,7 +50,6 @@ struct PriceView: View {
                 }
             }
             .font(.caption)
-//            .frame(maxHeight: 150)
         }
     }
 }

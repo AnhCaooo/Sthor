@@ -10,9 +10,8 @@ import Charts
 
 // TODO: handle value if it is too low (-200) or too hight (220)
 struct MiniExchangePricesBarChart: View {
-    var data: PriceSeries
     let formatter = DateFormatter()
-    
+    var data: PriceSeries
     
     var body: some View {
         // TODO: any ways to optimize these declarations?
@@ -24,7 +23,7 @@ struct MiniExchangePricesBarChart: View {
             BarMark(x: .value("Hour", formatter.parseStringToDate(date: $0.origTime), unit: .hour),
                     y: .value("Price", $0.price)
             )
-            .foregroundStyle(.barChart)
+            .foregroundStyle(.green.opacity(0.8))
             .accessibilityLabel("Exchange price at \($0.origTime)")
             .accessibilityValue("\($0.price) \(unit)")
             
@@ -57,7 +56,6 @@ struct MiniExchangePricesBarChart: View {
         }
     }
 }
-
 
 struct MiniBarChartView_Previews: PreviewProvider {
     static var previews: some View {

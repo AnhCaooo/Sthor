@@ -220,8 +220,8 @@
 		A0B956F42BEF82A80062C411 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				A0B956F52BEF82FE0062C411 /* CurrentPriceView.swift */,
 				A064EE932C178E410056B1F6 /* PriceView.swift */,
+				A0B956F52BEF82FE0062C411 /* CurrentPriceView.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";

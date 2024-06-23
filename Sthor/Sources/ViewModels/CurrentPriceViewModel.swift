@@ -47,7 +47,6 @@ class CurrentPriceViewModel: ObservableObject {
         let currentTimeInString = formatter.getCurrentTimeWithDateAndHourOnly()
         
         if let filteredData = todayPrices.data.first(where: { $0.time == currentTimeInString}) {
-            
             currentPrice = String(format: "%.2f", filteredData.price)
         }
         return currentPrice

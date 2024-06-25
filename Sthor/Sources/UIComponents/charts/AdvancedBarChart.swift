@@ -40,10 +40,6 @@ struct AdvancedBarChart: View {
                             Text("\(getPrice(date: chartSelection, data: dataSeries)) \(unit)")
                         }
                         .padding()
-                        .background {
-                            RoundedRectangle(cornerRadius: 4)
-                                .foregroundStyle(Color.accentColor.opacity(0.2))
-                        }
                     }
             }
         }

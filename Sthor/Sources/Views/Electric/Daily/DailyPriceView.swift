@@ -13,12 +13,11 @@ struct DailyPriceView: View {
     var body: some View {
         let _ = Self._printChanges()
         
-        Text("Hello, this is daily view!")
         switch viewModel.currentPriceState {
         case .failure:
             errorView
         default:
-            CurrentPriceSubView(viewModel: viewModel)
+            DailyPriceSubView(viewModel: viewModel)
                 .disabled(viewModel.currentPriceState == .success ? false : true)
             if viewModel.currentPriceState == .loading {
                 SpinnerView(title: "Loading . . .")

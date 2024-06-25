@@ -25,6 +25,7 @@
 		A064EE942C178E410056B1F6 /* CurrentPriceSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A064EE932C178E410056B1F6 /* CurrentPriceSubView.swift */; };
 		A06B348A2C15E0A7007B2342 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B34892C15E0A7007B2342 /* SpinnerView.swift */; };
 		A07328952BF6A13F0078D70F /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07328942BF6A13F0078D70F /* Color+Extensions.swift */; };
+		A08D10A32C2B625E00143DFE /* DailyPriceSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08D10A22C2B625E00143DFE /* DailyPriceSubView.swift */; };
 		A0B956E82BEF627C0062C411 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B956E72BEF627C0062C411 /* PreviewData.swift */; };
 		A0B956ED2BEF70540062C411 /* AdvancedBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B956EC2BEF70540062C411 /* AdvancedBarChart.swift */; };
 		A0B956EF2BEF7AD20062C411 /* MiniExchangePricesBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B956EE2BEF7AD20062C411 /* MiniExchangePricesBarChart.swift */; };
@@ -64,6 +65,7 @@
 		A06B34882C15CF28007B2342 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A06B34892C15E0A7007B2342 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		A07328942BF6A13F0078D70F /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		A08D10A22C2B625E00143DFE /* DailyPriceSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPriceSubView.swift; sourceTree = "<group>"; };
 		A0B956E72BEF627C0062C411 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		A0B956EC2BEF70540062C411 /* AdvancedBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedBarChart.swift; sourceTree = "<group>"; };
 		A0B956EE2BEF7AD20062C411 /* MiniExchangePricesBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniExchangePricesBarChart.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				A0E3815C2C2B574D00CC6D02 /* DailyPriceView.swift */,
+				A08D10A22C2B625E00143DFE /* DailyPriceSubView.swift */,
 			);
 			path = Daily;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				A07328952BF6A13F0078D70F /* Color+Extensions.swift in Sources */,
 				A03C92DA2BE6A86B0076E4F7 /* ProfileView.swift in Sources */,
 				A06B348A2C15E0A7007B2342 /* SpinnerView.swift in Sources */,
+				A08D10A32C2B625E00143DFE /* DailyPriceSubView.swift in Sources */,
 				A0E3815F2C2B578A00CC6D02 /* WeeklyPriceView.swift in Sources */,
 				A03C92D82BE6A8500076E4F7 /* NotificationsView.swift in Sources */,
 			);

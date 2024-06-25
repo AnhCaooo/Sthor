@@ -1,5 +1,5 @@
 //
-//  PriceView.swift
+//  CurrentPriceSubView.swift
 //  Sthor
 //
 //  Created by Anh Cao on 10.6.2024.

@@ -12,9 +12,8 @@ struct ElectricView: View {
         NavigationStack {
             ScrollView(.vertical) {
                 LazyVStack(spacing: 10, pinnedViews: [.sectionHeaders]) {
-                    Text("Hello, this is advanced view for exchange electric price. Select specific timeslot to view electric")
+                    DailyPriceView()
                 }
-                .padding(15)
             }
         }
         .navigationTitle("Electric")

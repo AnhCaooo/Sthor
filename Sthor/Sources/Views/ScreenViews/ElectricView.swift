@@ -7,18 +7,13 @@
 
 import SwiftUI
 
-struct ElectricView: View {
+struct ElectricView: View {    
     var body: some View {
         NavigationStack {
             ScrollView(.vertical) {
                 LazyVStack(spacing: 10, pinnedViews: [.sectionHeaders]) {
-                    Section {
-                        Text("Hello, this is advanced view for exchange electric price. Select specific timeslot to view electric")
-                    } header: {
-                        
-                    }
+                    DailyPriceView()
                 }
-                .padding(15)
             }
         }
         .navigationTitle("Electric")

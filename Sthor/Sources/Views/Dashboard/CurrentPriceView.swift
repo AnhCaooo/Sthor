@@ -18,7 +18,7 @@ struct CurrentPriceView: View {
                 case .failure:
                     errorView
                 default:
-                    PriceView(viewModel: viewModel)
+                    CurrentPriceSubView(viewModel: viewModel)
                         .disabled(viewModel.currentPriceState == .success ? false : true)
                     if viewModel.currentPriceState == .loading {
                         SpinnerView(title: "Loading . . .")

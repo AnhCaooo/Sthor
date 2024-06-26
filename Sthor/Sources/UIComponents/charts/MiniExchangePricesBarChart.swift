@@ -10,21 +10,32 @@ import Charts
 
 // TODO: handle value if it is too low (-200) or too hight (220)
 struct MiniExchangePricesBarChart: View {
+    let formatter: DateFormatter
+    /// Receiving parameter
     var data: PriceSeries
-    let formatter = DateFormatter()
+    /// Properties
+    private var unit: String
+    private var dataSeries: [TimelyData]
     
+    init(data: PriceSeries) {
+        self.data = data
+        self.unit = data.name
+        self.dataSeries = data.data
+        self.formatter = DateFormatter()
+    }
     
     var body: some View {
-        // TODO: any ways to optimize these declarations?
-        let unit = data.name
-        let dataSeries = data.data
         let currentTime = formatter.getCurrentTimeWithDateAndHourOnly()
+
+        let yValues = dataSeries.map { $0.price }
+        let maxYValue = yValues.max() ?? 30
+        let yDomain = 0...max(maxYValue, 30)
         
         Chart(dataSeries) {
             BarMark(x: .value("Hour", formatter.parseStringToDate(date: $0.origTime), unit: .hour),
                     y: .value("Price", $0.price)
             )
-            .foregroundStyle(.barChart)
+            .foregroundStyle(.green.opacity(0.8))
             .accessibilityLabel("Exchange price at \($0.origTime)")
             .accessibilityValue("\($0.price) \(unit)")
             
@@ -33,8 +44,7 @@ struct MiniExchangePricesBarChart: View {
                     .foregroundStyle(.barChart.opacity(0.2))
             }
         }
-        // TODO: mark the Y scale more dynamic
-        .chartYScale(domain: [0, 30])
+        .chartYScale(domain: yDomain)
         .chartYAxis(.hidden)
         .chartXAxis {
             AxisMarks(values: .stride(by: .hour, count: 6)) { value in
@@ -57,7 +67,6 @@ struct MiniExchangePricesBarChart: View {
         }
     }
 }
-
 
 struct MiniBarChartView_Previews: PreviewProvider {
     static var previews: some View {

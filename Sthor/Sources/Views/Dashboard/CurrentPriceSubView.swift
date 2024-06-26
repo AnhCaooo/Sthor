@@ -1,5 +1,5 @@
 //
-//  PriceView.swift
+//  CurrentPriceSubView.swift
 //  Sthor
 //
 //  Created by Anh Cao on 10.6.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PriceView: View {
+struct CurrentPriceSubView: View {
     @ObservedObject public var viewModel: CurrentPriceViewModel
     
     var body: some View {
@@ -55,5 +55,5 @@ struct PriceView: View {
 }
 
 #Preview {
-    PriceView(viewModel: CurrentPriceViewModel())
+    CurrentPriceSubView(viewModel: CurrentPriceViewModel())
 }

@@ -10,14 +10,22 @@ import Charts
 
 // TODO: handle value if it is too low (-200) or too hight (220)
 struct MiniExchangePricesBarChart: View {
-    let formatter = DateFormatter()
+    let formatter: DateFormatter
     var data: PriceSeries
     
+    init(data: PriceSeries) {
+        self.data = data
+        self.formatter = DateFormatter()
+    }
+    
     var body: some View {
-        // TODO: any ways to optimize these declarations?
         let unit = data.name
         let dataSeries = data.data
         let currentTime = formatter.getCurrentTimeWithDateAndHourOnly()
+        
+        let yValues = dataSeries.map { $0.price }
+        let maxYValue = yValues.max() ?? 30
+        let yDomain = 0...max(maxYValue, 30)
         
         Chart(dataSeries) {
             BarMark(x: .value("Hour", formatter.parseStringToDate(date: $0.origTime), unit: .hour),
@@ -32,8 +40,7 @@ struct MiniExchangePricesBarChart: View {
                     .foregroundStyle(.barChart.opacity(0.2))
             }
         }
-        // TODO: mark the Y scale more dynamic
-        .chartYScale(domain: [0, 30])
+        .chartYScale(domain: yDomain)
         .chartYAxis(.hidden)
         .chartXAxis {
             AxisMarks(values: .stride(by: .hour, count: 6)) { value in

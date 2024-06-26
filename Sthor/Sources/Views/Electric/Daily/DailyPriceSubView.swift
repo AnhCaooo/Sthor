@@ -13,7 +13,7 @@ struct DailyPriceSubView: View {
     var body: some View {
         if let prices = viewModel.currentPrices {
             VStack {
-                AdvancedBarChart(electricResp: prices.today.prices)
+                AdvancedBarChart(data: prices.today.prices)
                     .frame(height: 300)
             }
             .padding()

@@ -11,18 +11,22 @@ import Charts
 // TODO: handle value if it is too low (-200) or too hight (220)
 struct MiniExchangePricesBarChart: View {
     let formatter: DateFormatter
+    /// Receiving parameter
     var data: PriceSeries
+    /// Properties
+    private var unit: String
+    private var dataSeries: [TimelyData]
     
     init(data: PriceSeries) {
         self.data = data
+        self.unit = data.name
+        self.dataSeries = data.data
         self.formatter = DateFormatter()
     }
     
     var body: some View {
-        let unit = data.name
-        let dataSeries = data.data
         let currentTime = formatter.getCurrentTimeWithDateAndHourOnly()
-        
+
         let yValues = dataSeries.map { $0.price }
         let maxYValue = yValues.max() ?? 30
         let yDomain = 0...max(maxYValue, 30)

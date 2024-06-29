@@ -41,7 +41,7 @@ struct MiniExchangePricesBarChart: View {
             
             if currentTime == $0.origTime {
                 RectangleMark(x: .value("Hour", formatter.parseStringToDate(date: $0.origTime), unit: .hour))
-                    .foregroundStyle(.barChart.opacity(0.2))
+                    .foregroundStyle(.green.opacity(0.2))
             }
         }
         .chartYScale(domain: yDomain)

@@ -87,9 +87,6 @@ struct AdvancedBarChart: View {
                 }
             }
         }
-        .chartPlotStyle { plotArea in
-            plotArea.background(.barChart.opacity(0.02))
-        }
         .chartXSelection(value: $chartSelection)
         
     }

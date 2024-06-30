@@ -9,7 +9,26 @@ import SwiftUI
 
 struct WelcomeView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            ZStack {
+                RoundedRectangle(cornerRadius: 30)
+                    .frame(width: 150, height: 150)
+                    .foregroundStyle(.tint)
+                        
+                Image(systemName: "powercord.fill")
+                    .font(.system(size: 70))
+                    .foregroundStyle(.white)
+            }
+                
+            Text("Welcome to MyElectric")
+                .font(.title)
+                .fontWeight(.semibold)
+                .padding(.top)
+                    
+            Text("Visual exchange price")
+                .font(.title2)
+            }
+            .padding()
     }
 }
 

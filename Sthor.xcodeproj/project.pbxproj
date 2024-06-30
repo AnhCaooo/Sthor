@@ -90,6 +90,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A027A4942C31CB850082E3BF /* OnboardingSources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = OnboardingSources;
+			sourceTree = "<group>";
+		};
 		A02B85E62BE7A91400165D53 /* ScreenViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				A06B34882C15CF28007B2342 /* Info.plist */,
+				A027A4942C31CB850082E3BF /* OnboardingSources */,
 				A03C92C72BE6A67F0076E4F7 /* Sources */,
 				A03C92BD2BE6A64E0076E4F7 /* Assets.xcassets */,
 				A03C92BF2BE6A64E0076E4F7 /* Preview Content */,

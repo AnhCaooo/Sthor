@@ -98,7 +98,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A027A4942C31CB850082E3BF /* OnboardingSources */ = {
+		A027A4942C31CB850082E3BF /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
 				A027A49C2C31CF910082E3BF /* OnboardingView.swift */,
@@ -106,7 +106,7 @@
 				A027A4972C31CDED0082E3BF /* FeaturesView.swift */,
 				A027A4992C31CE410082E3BF /* Components */,
 			);
-			path = OnboardingSources;
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		A027A4992C31CE410082E3BF /* Components */ = {
@@ -150,8 +150,9 @@
 			isa = PBXGroup;
 			children = (
 				A06B34882C15CF28007B2342 /* Info.plist */,
-				A027A4942C31CB850082E3BF /* OnboardingSources */,
-				A03C92C72BE6A67F0076E4F7 /* Sources */,
+				A03C92B92BE6A64E0076E4F7 /* SthorApp.swift */,
+				A027A4942C31CB850082E3BF /* Onboarding */,
+				A03C92C72BE6A67F0076E4F7 /* Application */,
 				A03C92BD2BE6A64E0076E4F7 /* Assets.xcassets */,
 				A03C92BF2BE6A64E0076E4F7 /* Preview Content */,
 			);
@@ -167,22 +168,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		A03C92C72BE6A67F0076E4F7 /* Sources */ = {
+		A03C92C72BE6A67F0076E4F7 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				A03C92B92BE6A64E0076E4F7 /* SthorApp.swift */,
 				A03C92CD2BE6A6CE0076E4F7 /* Views */,
 				A0EECDFA2C15A51300D8934A /* ViewModels */,
 				A03C92CA2BE6A6B40076E4F7 /* Models */,
-				A03C92C82BE6A6870076E4F7 /* UIComponents */,
+				A03C92C82BE6A6870076E4F7 /* UI */,
 				A03C92C92BE6A6A90076E4F7 /* Enums */,
 				A03C92CC2BE6A6C40076E4F7 /* Utils */,
 				A03C92CB2BE6A6BD0076E4F7 /* Services */,
 			);
-			path = Sources;
+			path = Application;
 			sourceTree = "<group>";
 		};
-		A03C92C82BE6A6870076E4F7 /* UIComponents */ = {
+		A03C92C82BE6A6870076E4F7 /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				A0B956E92BEF6EAC0062C411 /* charts */,
@@ -190,7 +190,7 @@
 				A03C92D22BE6A7DC0076E4F7 /* README.md */,
 				A06B34892C15E0A7007B2342 /* SpinnerView.swift */,
 			);
-			path = UIComponents;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		A03C92C92BE6A6A90076E4F7 /* Enums */ = {

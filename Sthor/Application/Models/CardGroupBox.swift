@@ -10,36 +10,24 @@ import SwiftUI
 
 struct CardConfig: Identifiable {
     let id = UUID()
-    let label: CardPriceLabel
+    let type: CardPriceType
+    let label: String
     let icon: String
     let content: String
 }
 
-enum CardPriceLabel {
+enum CardPriceType {
     case now
     case average
     case lowest
     case highest
-    
-    var displayedName: String {
-        switch self {
-        case .now:
-            "Price now"
-        case .average:
-            "Price average"
-        case .lowest:
-            "Lowest"
-        case .highest:
-            "Highest"
-        }
-    }
-    
+        
     var foregroundColor: Color {
         switch self {
         case .now:
             .blue
         case .average:
-            .black
+            .gray
         case .lowest:
             .green
         case .highest:

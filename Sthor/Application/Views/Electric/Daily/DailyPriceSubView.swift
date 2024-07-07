@@ -16,7 +16,7 @@ struct DailyPriceSubView: View {
                 AdvancedBarChart(data: prices.today.prices)
                     .frame(height: 300)
             }
-            .padding()
+            .padding(.top, 30)
         }
         
     }

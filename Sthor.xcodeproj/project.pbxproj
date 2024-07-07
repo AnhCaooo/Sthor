@@ -31,6 +31,8 @@
 		A07328952BF6A13F0078D70F /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07328942BF6A13F0078D70F /* Color+Extensions.swift */; };
 		A08D10A32C2B625E00143DFE /* DailyPriceSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08D10A22C2B625E00143DFE /* DailyPriceSubView.swift */; };
 		A0AB80812C3A89F3009A7D2F /* CustomPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AB80802C3A89F3009A7D2F /* CustomPriceView.swift */; };
+		A0AB80832C3AA365009A7D2F /* PriceCardGroupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AB80822C3AA365009A7D2F /* PriceCardGroupBox.swift */; };
+		A0AB80852C3AA3C9009A7D2F /* CardGroupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AB80842C3AA3C9009A7D2F /* CardGroupBox.swift */; };
 		A0B956E82BEF627C0062C411 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B956E72BEF627C0062C411 /* PreviewData.swift */; };
 		A0B956ED2BEF70540062C411 /* AdvancedBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B956EC2BEF70540062C411 /* AdvancedBarChart.swift */; };
 		A0B956EF2BEF7AD20062C411 /* MiniExchangePricesBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B956EE2BEF7AD20062C411 /* MiniExchangePricesBarChart.swift */; };
@@ -76,6 +78,8 @@
 		A07328942BF6A13F0078D70F /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		A08D10A22C2B625E00143DFE /* DailyPriceSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPriceSubView.swift; sourceTree = "<group>"; };
 		A0AB80802C3A89F3009A7D2F /* CustomPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPriceView.swift; sourceTree = "<group>"; };
+		A0AB80822C3AA365009A7D2F /* PriceCardGroupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceCardGroupBox.swift; sourceTree = "<group>"; };
+		A0AB80842C3AA3C9009A7D2F /* CardGroupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGroupBox.swift; sourceTree = "<group>"; };
 		A0B956E72BEF627C0062C411 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		A0B956EC2BEF70540062C411 /* AdvancedBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedBarChart.swift; sourceTree = "<group>"; };
 		A0B956EE2BEF7AD20062C411 /* MiniExchangePricesBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniExchangePricesBarChart.swift; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 		A03C92C82BE6A6870076E4F7 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A0AB80862C3AA7F0009A7D2F /* GroupBox */,
 				A0B956E92BEF6EAC0062C411 /* charts */,
 				A03C92D02BE6A7B60076E4F7 /* ScreenHeader.swift */,
 				A03C92D22BE6A7DC0076E4F7 /* README.md */,
@@ -212,6 +217,7 @@
 				A02B85E42BE7A7BC00165D53 /* Ui.swift */,
 				A04C246E2BECD1C300372341 /* Theme.swift */,
 				A04C24702BECD58E00372341 /* Electric.swift */,
+				A0AB80842C3AA3C9009A7D2F /* CardGroupBox.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -278,6 +284,14 @@
 				A0AB80802C3A89F3009A7D2F /* CustomPriceView.swift */,
 			);
 			path = Custom;
+			sourceTree = "<group>";
+		};
+		A0AB80862C3AA7F0009A7D2F /* GroupBox */ = {
+			isa = PBXGroup;
+			children = (
+				A0AB80822C3AA365009A7D2F /* PriceCardGroupBox.swift */,
+			);
+			path = GroupBox;
 			sourceTree = "<group>";
 		};
 		A0B956E92BEF6EAC0062C411 /* charts */ = {
@@ -396,6 +410,7 @@
 				A04C24712BECD58E00372341 /* Electric.swift in Sources */,
 				A0EECDFC2C15A5B400D8934A /* CurrentPriceViewModel.swift in Sources */,
 				A03C92CF2BE6A75D0076E4F7 /* ElectricView.swift in Sources */,
+				A0AB80832C3AA365009A7D2F /* PriceCardGroupBox.swift in Sources */,
 				A0B956E82BEF627C0062C411 /* PreviewData.swift in Sources */,
 				A0E3815D2C2B574D00CC6D02 /* DailyPriceView.swift in Sources */,
 				A02B85E52BE7A7BC00165D53 /* Ui.swift in Sources */,
@@ -411,6 +426,7 @@
 				A0D527B72C1F5D7C00EF78FE /* Tab.swift in Sources */,
 				A04C246F2BECD1C300372341 /* Theme.swift in Sources */,
 				A07328952BF6A13F0078D70F /* Color+Extensions.swift in Sources */,
+				A0AB80852C3AA3C9009A7D2F /* CardGroupBox.swift in Sources */,
 				A03C92DA2BE6A86B0076E4F7 /* ProfileView.swift in Sources */,
 				A0AB80812C3A89F3009A7D2F /* CustomPriceView.swift in Sources */,
 				A027A4982C31CDED0082E3BF /* FeaturesView.swift in Sources */,

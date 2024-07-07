@@ -12,6 +12,12 @@ struct DailyPriceSubView: View {
     
     var body: some View {
         if let prices = viewModel.currentPrices {
+            let currentPrice: String = "0.00"
+            let averagePrice: String = "0.00"
+            let lowestPrice: String = "0.00"
+            let highestPrice: String = "0.00"
+            let unit: String = prices.today.prices.name
+            
             VStack {
                 HStack {
                     Text("Today")
@@ -30,32 +36,11 @@ struct DailyPriceSubView: View {
                         Spacer()
                     }
                     // mark: only available for today view
-                    GroupBox(
-                        label: Label("Price now", systemImage: "")
-                            .foregroundColor(.blue)
-                        ) {
-                            Text("Current price is 0.00 c/kwh")
-                        }
-                    
-                    GroupBox(
-                        label: Label("Daily average", systemImage: "")
-//                            .foregroundColor(.blue)
-                        ) {
-                            Text("Average price is 0.00 c/kwh")
-                        }
+                    PriceCardGroupBox(info: CardConfig(label: CardPriceLabel.now, icon: "", content: "Current price is \(currentPrice) \(unit)"))
+                    PriceCardGroupBox(info: CardConfig(label: CardPriceLabel.average, icon: "", content: "Average price is \(averagePrice) \(unit)"))
                     HStack{
-                        GroupBox(
-                            label: Label("Lowest", systemImage: "")
-                                .foregroundColor(.green)
-                            ) {
-                                Text("0.00 c/kwh")
-                            }
-                        GroupBox(
-                            label: Label("Highest", systemImage: "")
-                                .foregroundColor(.red)
-                            ) {
-                                Text("0.00 c/kwh")
-                            }
+                        PriceCardGroupBox(info: CardConfig(label: CardPriceLabel.lowest, icon: "", content: "\(lowestPrice) \(unit)"))
+                        PriceCardGroupBox(info: CardConfig(label: CardPriceLabel.highest, icon: "", content: "\(highestPrice) \(unit)"))
                     }
                     
                 }

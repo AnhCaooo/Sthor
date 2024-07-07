@@ -25,10 +25,9 @@ struct AdvancedBarChart: View {
         self.formatter = DateFormatter()
     }
     
-    
     var body: some View {
         let currentTime: String = formatter.getCurrentTimeWithDateAndHourOnly()
-        let currentPrice: String = getPrice(date: formatter.parseStringToDate(date: currentTime))
+        let currentPrice: String = self.data.getCurrentPrice()
         
         let yValues = dataSeries.map { $0.price }
         let maxYValue = yValues.max() ?? 50
@@ -91,14 +90,15 @@ struct AdvancedBarChart: View {
         .chartXSelection(value: $chartSelection)
         
     }
-    
+}
+
+extension AdvancedBarChart {
     func getPrice(date: Date) -> String {
         let receivedDate = formatter.formatDateToString(date: date, format: "yyyy-MM-dd HH:00:00")
         if let filteredData = dataSeries.first(where: {$0.time == receivedDate}) {
             return String(format: "%.2f", filteredData.price)
         }
         return "0.00"
-        
     }
 }
 

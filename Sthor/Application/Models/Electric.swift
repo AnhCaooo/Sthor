@@ -20,6 +20,48 @@ struct PriceData: Codable {
 struct PriceSeries: Codable {
     let name: String
     let data: [TimelyData]
+    
+    func getCurrentPrice() -> String {
+        let formatter = DateFormatter()
+        let now: String = formatter.getCurrentTimeWithDateAndHourOnly()
+        if let filteredData = data.first(where: {$0.time == now}) {
+            return filteredData.parsePriceFromDoubleToString()
+        }
+        return "0.00"
+    }
+    
+    func getLowestPrice() -> PriceAtTime {
+        if let lowestPrice: TimelyData = data.min(by: { $0.price < $1.price}) {
+            return PriceAtTime(price: lowestPrice.parsePriceFromDoubleToString(), time: lowestPrice.time)
+        }
+        return PriceAtTime(price: "0.0", time: "n/a")
+    }
+    
+    func getHighestPrice() -> PriceAtTime {        
+        if let highestPrice: TimelyData = data.max(by: { $0.price < $1.price}) {
+            return PriceAtTime(price: highestPrice.parsePriceFromDoubleToString(), time: highestPrice.time)
+        }
+        return PriceAtTime(price: "0.0", time: "n/a")
+    }
+    
+    func getAveragePrice() -> String {
+        let sumOfPrices: Double = data.reduce(0, {$0 + $1.price})
+        let averagePrice: Double = sumOfPrices / Double(data.count)
+        return String(format: "%.2f", averagePrice)
+    }
+}
+
+struct PriceAtTime: Codable {
+    let price: String
+    let time: String
+
+    func convertTimeToMeridian() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        
+        let date = formatter.parseStringToDate(date: time)
+        return formatter.string(from: date)
+    }
 }
 
 struct TimelyData: Codable, Identifiable {
@@ -34,6 +76,11 @@ struct TimelyData: Codable, Identifiable {
         case time, price
         case vatFactor = "vat_factor"
         case isToday
+    }
+    
+    // Use to convert price from Doube to formatted string
+    func parsePriceFromDoubleToString() -> String {
+        return String(format: "%.2f", price)
     }
 }
 

@@ -13,9 +13,11 @@ struct PriceCardGroupBox: View {
         GroupBox(
             label: Label(info.label.displayedName, systemImage: info.icon)
                 .foregroundColor(info.label.foregroundColor)
-            ) {
-                Text(info.content)
-            }
+                .accessibilityLabel(info.label.displayedName)
+        ) {
+            Text(info.content)
+                .accessibilityValue(info.content)
+        }
     }
 }
 

@@ -29,7 +29,8 @@ struct MiniExchangePricesBarChart: View {
 
         let yValues = dataSeries.map { $0.price }
         let maxYValue = yValues.max() ?? 30
-        let yDomain = 0...max(maxYValue, 30)
+        let minYValue = yValues.min() ?? -5
+        let yDomain = min(minYValue, -5)...max(maxYValue, 50)
         
         Chart(dataSeries) {
             BarMark(x: .value("Hour", formatter.parseStringToDate(date: $0.origTime), unit: .hour),

@@ -32,7 +32,8 @@ struct AdvancedBarChart: View {
         
         let yValues = dataSeries.map { $0.price }
         let maxYValue = yValues.max() ?? 50
-        let yDomain = 0...max(maxYValue, 50)
+        let minYValue = yValues.min() ?? -5
+        let yDomain = min(minYValue, -5)...max(maxYValue, 50)
         
         Chart(dataSeries) {
             BarMark(

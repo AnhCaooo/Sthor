@@ -42,17 +42,18 @@ struct ElectricView: View {
                             }
                         }
                         .pickerStyle(.segmented)
+                        
+                        Divider()
                         switch selectedBarChartType {
                         case .daily:
-                            DailyPriceView()
+                            DailyPriceView()                            
                         case .weekly:
                             WeeklyPriceView()
                         case .monthly:
                             MonthlyPriceView()
                         case .custom:
                             CustomPriceView()
-                        }
-                        
+                        }                        
                     }
                     
                 }

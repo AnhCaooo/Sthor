@@ -68,7 +68,7 @@ struct TimelyData: Codable, Identifiable {
     let id = UUID()
     let origTime, time: String
     let price: Double
-    let vatFactor: Int
+    let vatFactor: VAT
     let isToday: Bool
 
     enum CodingKeys: String, CodingKey {
@@ -84,15 +84,6 @@ struct TimelyData: Codable, Identifiable {
     }
 }
 
-struct PriceRequest: Codable {
-    let startDate: String
-    let endDate: String
-    let marginal: Float64
-    let group: String
-    let vatIncluded: Int32
-    let comparedToLastYear: Int32
-}
-
 struct TodayTomorrowPrices: Codable {
     let today: DailyPrice
     let tomorrow: DailyPrice
@@ -103,3 +94,29 @@ struct DailyPrice: Codable {
     let prices: PriceSeries
 }
 
+struct PriceRequest: Codable {
+    let startDate: String
+    let endDate: String
+    let marginal: Float64
+    let group: TimelyGroup
+    let vatIncluded: VAT
+    let comparedToLastYear: ComparedToLastYear
+}
+
+enum TimelyGroup: String, Codable {
+    case hour = "hour"
+    case daily = "day"
+    case weekly = "week"
+    case monthly = "month"
+    case yearly = "year"
+}
+
+enum VAT: Int32, Codable  {
+    case included = 1
+    case notIncluded = 0
+}
+
+enum ComparedToLastYear: Int32, Codable {
+    case compared = 1
+    case notCompared = 0
+}

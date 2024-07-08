@@ -15,6 +15,7 @@ class ElectricService {
     let BaseURL = "http://18.196.26.135"
     let ElectricService = "/stormbreaker"
     let CurrentExchangePrices = "/v1/market-price/today-tomorrow"
+    let MarketPrices = "/v1/market-price"
     
     let backgroundQueue = DispatchQueue(label: "electric-service")
     

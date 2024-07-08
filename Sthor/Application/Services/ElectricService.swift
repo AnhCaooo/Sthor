@@ -12,15 +12,15 @@ import Combine
 typealias TodayTomorrowPricePublisher = AnyPublisher<TodayTomorrowPrices, Error>
 
 class ElectricService {
-    let BASE_URL = "http://18.196.26.135"
-    let ELECTRIC_SERVICE = "/stormbreaker"
-    let CURRENT_EXCHANGE_PRICES = "/v1/market-price/today-tomorrow"
+    let BaseURL = "http://18.196.26.135"
+    let ElectricService = "/stormbreaker"
+    let CurrentExchangePrices = "/v1/market-price/today-tomorrow"
     
     let backgroundQueue = DispatchQueue(label: "electric-service")
     
     func GetTodayTomorrowPrices() -> TodayTomorrowPricePublisher {
         
-        guard let url = URL(string: BASE_URL + ELECTRIC_SERVICE + CURRENT_EXCHANGE_PRICES) else {
+        guard let url = URL(string: BaseURL + ElectricService + CurrentExchangePrices) else {
             fatalError("Invalid URL")
         }
 

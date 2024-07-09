@@ -7,6 +7,15 @@
 
 import Foundation
 
+struct PriceRequest: Codable {
+    let startDate: String
+    let endDate: String
+    let marginal: Float64
+    let group: TimelyGroup
+    let vatIncluded: VAT
+    let comparedToLastYear: ComparedToLastYear
+}
+
 struct PriceResponse: Codable {
     let status: String
     let data: PriceData
@@ -22,8 +31,7 @@ struct PriceSeries: Codable {
     let data: [TimelyData]
     
     func getCurrentPrice() -> String {
-        let formatter = DateFormatter()
-        let now: String = formatter.getCurrentTimeWithDateAndHourOnly()
+        let now: String = Timer().getCurrentTimeWithDateAndHourOnly()
         if let filteredData = data.first(where: {$0.time == now}) {
             return filteredData.parsePriceFromDoubleToString()
         }
@@ -92,15 +100,6 @@ struct TodayTomorrowPrices: Codable {
 struct DailyPrice: Codable {
     let available: Bool
     let prices: PriceSeries
-}
-
-struct PriceRequest: Codable {
-    let startDate: String
-    let endDate: String
-    let marginal: Float64
-    let group: TimelyGroup
-    let vatIncluded: VAT
-    let comparedToLastYear: ComparedToLastYear
 }
 
 enum TimelyGroup: String, Codable {

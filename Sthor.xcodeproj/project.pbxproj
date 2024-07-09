@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A01E2D0C2BE7AF2D00BFDAC3 /* View+Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01E2D0B2BE7AF2D00BFDAC3 /* View+Extenstions.swift */; };
 		A01E2D0E2BE7B4B400BFDAC3 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01E2D0D2BE7B4B400BFDAC3 /* DateFormatter+Extensions.swift */; };
+		A01F85012C3DC4A5008BDC72 /* MarketPriceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F85002C3DC4A5008BDC72 /* MarketPriceViewModel.swift */; };
+		A01F85032C3DCDDE008BDC72 /* Timer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F85022C3DCDDE008BDC72 /* Timer+Extension.swift */; };
 		A027A4962C31CC4B0082E3BF /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027A4952C31CC4B0082E3BF /* WelcomeView.swift */; };
 		A027A4982C31CDED0082E3BF /* FeaturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027A4972C31CDED0082E3BF /* FeaturesView.swift */; };
 		A027A49B2C31CE5F0082E3BF /* FeatureCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027A49A2C31CE5F0082E3BF /* FeatureCard.swift */; };
@@ -48,6 +50,8 @@
 /* Begin PBXFileReference section */
 		A01E2D0B2BE7AF2D00BFDAC3 /* View+Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extenstions.swift"; sourceTree = "<group>"; };
 		A01E2D0D2BE7B4B400BFDAC3 /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
+		A01F85002C3DC4A5008BDC72 /* MarketPriceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketPriceViewModel.swift; sourceTree = "<group>"; };
+		A01F85022C3DCDDE008BDC72 /* Timer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timer+Extension.swift"; sourceTree = "<group>"; };
 		A027A4952C31CC4B0082E3BF /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		A027A4972C31CDED0082E3BF /* FeaturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesView.swift; sourceTree = "<group>"; };
 		A027A49A2C31CE5F0082E3BF /* FeatureCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCard.swift; sourceTree = "<group>"; };
@@ -180,10 +184,10 @@
 				A03C92CD2BE6A6CE0076E4F7 /* Views */,
 				A0EECDFA2C15A51300D8934A /* ViewModels */,
 				A03C92CA2BE6A6B40076E4F7 /* Models */,
+				A03C92CB2BE6A6BD0076E4F7 /* Services */,
 				A03C92C82BE6A6870076E4F7 /* UI */,
 				A03C92C92BE6A6A90076E4F7 /* Enums */,
 				A03C92CC2BE6A6C40076E4F7 /* Utils */,
-				A03C92CB2BE6A6BD0076E4F7 /* Services */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -237,6 +241,7 @@
 				A01E2D0B2BE7AF2D00BFDAC3 /* View+Extenstions.swift */,
 				A01E2D0D2BE7B4B400BFDAC3 /* DateFormatter+Extensions.swift */,
 				A07328942BF6A13F0078D70F /* Color+Extensions.swift */,
+				A01F85022C3DCDDE008BDC72 /* Timer+Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				A0EECDFB2C15A5B400D8934A /* CurrentPriceViewModel.swift */,
+				A01F85002C3DC4A5008BDC72 /* MarketPriceViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -407,6 +413,7 @@
 				A01E2D0E2BE7B4B400BFDAC3 /* DateFormatter+Extensions.swift in Sources */,
 				A027A49B2C31CE5F0082E3BF /* FeatureCard.swift in Sources */,
 				A064EE922C178BED0056B1F6 /* State.swift in Sources */,
+				A01F85032C3DCDDE008BDC72 /* Timer+Extension.swift in Sources */,
 				A04C24712BECD58E00372341 /* Electric.swift in Sources */,
 				A0EECDFC2C15A5B400D8934A /* CurrentPriceViewModel.swift in Sources */,
 				A03C92CF2BE6A75D0076E4F7 /* ElectricView.swift in Sources */,
@@ -428,6 +435,7 @@
 				A07328952BF6A13F0078D70F /* Color+Extensions.swift in Sources */,
 				A0AB80852C3AA3C9009A7D2F /* CardGroupBox.swift in Sources */,
 				A03C92DA2BE6A86B0076E4F7 /* ProfileView.swift in Sources */,
+				A01F85012C3DC4A5008BDC72 /* MarketPriceViewModel.swift in Sources */,
 				A0AB80812C3A89F3009A7D2F /* CustomPriceView.swift in Sources */,
 				A027A4982C31CDED0082E3BF /* FeaturesView.swift in Sources */,
 				A06B348A2C15E0A7007B2342 /* SpinnerView.swift in Sources */,

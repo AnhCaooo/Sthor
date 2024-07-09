@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct DailyPriceSubView: View {
-    @ObservedObject public var viewModel: CurrentPriceViewModel
+    @ObservedObject public var viewModel: MarketPriceViewModel
     
     var body: some View {
-        if let prices = viewModel.currentPrices {
-            let currentPrice: String = prices.today.prices.getCurrentPrice()
-            let averagePrice: String = prices.today.prices.getAveragePrice()
-            let lowestPrice: PriceAtTime = prices.today.prices.getLowestPrice()
-            let highestPrice: PriceAtTime = prices.today.prices.getHighestPrice()
-            let unit: String = prices.today.prices.name
+        if let prices = viewModel.prices {
+            let currentPrice: String = prices.data.series[0].getCurrentPrice()
+            let averagePrice: String = prices.data.series[0].getAveragePrice()
+            let lowestPrice: PriceAtTime = prices.data.series[0].getLowestPrice()
+            let highestPrice: PriceAtTime = prices.data.series[0].getHighestPrice()
+            let unit: String = prices.data.series[0].name
             
             VStack {
                 HStack {
@@ -24,7 +24,7 @@ struct DailyPriceSubView: View {
                         .foregroundStyle(.secondary)
                     Spacer()
                 }
-                AdvancedBarChart(data: prices.today.prices)
+                AdvancedBarChart(data: prices.data.series[0])
                     .frame(height: 300)
                     .padding(.top, 20)
                 Divider()
@@ -54,5 +54,5 @@ struct DailyPriceSubView: View {
 }
 
 #Preview {
-    DailyPriceSubView(viewModel: CurrentPriceViewModel())
+    DailyPriceSubView(viewModel: MarketPriceViewModel())
 }

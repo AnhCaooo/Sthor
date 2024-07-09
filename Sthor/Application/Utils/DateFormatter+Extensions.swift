@@ -28,10 +28,4 @@ extension DateFormatter {
         
         return date
     }
-    
-    func getCurrentTimeWithDateAndHourOnly() -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:00:00"
-        return formatter.string(from: Date())
-    }
 }

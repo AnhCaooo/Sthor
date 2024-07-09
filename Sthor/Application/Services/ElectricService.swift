@@ -10,6 +10,7 @@ import Combine
 
 
 typealias TodayTomorrowPricePublisher = AnyPublisher<TodayTomorrowPrices, Error>
+typealias MarketPricePublisher = AnyPublisher<PriceResponse, Error>
 
 class ElectricService {
     let BaseURL = "http://18.196.26.135"
@@ -33,5 +34,28 @@ class ElectricService {
             .eraseToAnyPublisher()
     }
     
+    
+    func GetMarketPrice(reqBody: PriceRequest) -> MarketPricePublisher {
+        guard let url = URL(string: BaseURL + ElectricService + MarketPrices) else {
+            fatalError("Invalid URL")
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                
+        do {
+            request.httpBody = try JSONEncoder().encode(reqBody)
+        } catch {
+            return Fail(error: error).eraseToAnyPublisher()
+        }
+        
+        return URLSession.shared.dataTaskPublisher(for: request)
+            .map(\.data)
+            .subscribe(on: backgroundQueue)
+            .receive(on: DispatchQueue.main)
+            .decode(type: PriceResponse.self, decoder: JSONDecoder())
+            .eraseToAnyPublisher()
+    }
 
 }

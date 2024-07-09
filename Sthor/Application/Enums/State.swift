@@ -8,6 +8,7 @@
 import Foundation
 
 enum NetworkState {
+    case idle
     case loading
     case failure
     case success

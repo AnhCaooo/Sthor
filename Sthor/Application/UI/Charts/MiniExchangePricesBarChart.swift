@@ -25,7 +25,7 @@ struct MiniExchangePricesBarChart: View {
     }
     
     var body: some View {
-        let currentTime = formatter.getCurrentTimeWithDateAndHourOnly()
+        let currentTime = Timer().getCurrentTimeWithDateAndHourOnly()
 
         let yValues = dataSeries.map { $0.price }
         let maxYValue = yValues.max() ?? 30

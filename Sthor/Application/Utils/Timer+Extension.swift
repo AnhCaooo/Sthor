@@ -13,4 +13,10 @@ extension Timer {
         formatter.dateFormat = "yyyy-MM-dd HH:00:00"
         return formatter.string(from: Date())
     }
+    
+    func getCurrentDateOnly() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter.string(from: Date())
+    }
 }

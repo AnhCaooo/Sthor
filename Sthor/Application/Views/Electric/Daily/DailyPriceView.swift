@@ -27,17 +27,14 @@ struct DailyPriceView: View {
         }
         .onAppear {
             let reqBody = PriceRequest(
-                startDate: Timer().getCurrentTimeWithDateAndHourOnly(),
-                endDate: Timer().getCurrentTimeWithDateAndHourOnly(),
+                startDate: Timer().getCurrentDateOnly(),
+                endDate: Timer().getCurrentDateOnly(),
                 marginal: 0.59,
-                group: .hour,
-                vatIncluded: .included,
-                comparedToLastYear: .notCompared
+                group: "hour",
+                vatIncluded: 1,
+                comparedToLastYear: 0
             )
-//            print("req", reqBody)
-            
-//                viewModel.getMarketPrices(body: encodedData)
-            
+            viewModel.getMarketPrices(body: reqBody)
         }
         
         

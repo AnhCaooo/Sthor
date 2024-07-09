@@ -192,7 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				A0AB80862C3AA7F0009A7D2F /* GroupBox */,
-				A0B956E92BEF6EAC0062C411 /* charts */,
+				A0B956E92BEF6EAC0062C411 /* Charts */,
 				A03C92D02BE6A7B60076E4F7 /* ScreenHeader.swift */,
 				A03C92D22BE6A7DC0076E4F7 /* README.md */,
 				A06B34892C15E0A7007B2342 /* SpinnerView.swift */,
@@ -294,13 +294,13 @@
 			path = GroupBox;
 			sourceTree = "<group>";
 		};
-		A0B956E92BEF6EAC0062C411 /* charts */ = {
+		A0B956E92BEF6EAC0062C411 /* Charts */ = {
 			isa = PBXGroup;
 			children = (
 				A0B956EC2BEF70540062C411 /* AdvancedBarChart.swift */,
 				A0B956EE2BEF7AD20062C411 /* MiniExchangePricesBarChart.swift */,
 			);
-			path = charts;
+			path = Charts;
 			sourceTree = "<group>";
 		};
 		A0B956F42BEF82A80062C411 /* Dashboard */ = {

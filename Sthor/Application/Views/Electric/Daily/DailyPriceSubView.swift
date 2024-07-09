@@ -36,13 +36,12 @@ struct DailyPriceSubView: View {
                         Spacer()
                     }
                     // mark: only available for today view
-                    PriceCardGroupBox(info: CardConfig(type: CardPriceType.now, label: "Price now" , icon: "", content: "Current price is \(currentPrice) \(unit)"))
-                    PriceCardGroupBox(info: CardConfig(type: CardPriceType.average, label: "Average price", icon: "", content: "Average price is \(averagePrice) \(unit)"))
+                    PriceCardGroupBox(info: CardConfig(type: CardPriceType.now, label: "Price now" , content: "Current price is \(currentPrice) \(unit)"))
+                    PriceCardGroupBox(info: CardConfig(type: CardPriceType.average, label: "Average price", content: "Average price is \(averagePrice) \(unit)"))
                     HStack{
-                        PriceCardGroupBox(info: CardConfig(type: CardPriceType.lowest, label: "Lowest at \(lowestPrice.convertTimeToMeridian())", icon: "", content: "\(lowestPrice.price) \(unit)"))
-                        PriceCardGroupBox(info: CardConfig(type: CardPriceType.highest, label: "Highest at \(highestPrice.convertTimeToMeridian())", icon: "", content: "\(highestPrice.price) \(unit)"))
+                        PriceCardGroupBox(info: CardConfig(type: CardPriceType.lowest, label: "Lowest at \(lowestPrice.convertTimeToMeridian())", content: "\(lowestPrice.price) \(unit)"))
+                        PriceCardGroupBox(info: CardConfig(type: CardPriceType.highest, label: "Highest at \(highestPrice.convertTimeToMeridian())", content: "\(highestPrice.price) \(unit)"))
                     }
-                    
                     
                 }
                 .padding(.top, 20)

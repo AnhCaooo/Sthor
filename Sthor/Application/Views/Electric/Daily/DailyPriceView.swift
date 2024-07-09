@@ -8,21 +8,36 @@
 import SwiftUI
 
 struct DailyPriceView: View {
-    @StateObject var viewModel = CurrentPriceViewModel()
+    @StateObject var viewModel = MarketPriceViewModel()
     
     var body: some View {
         let _ = Self._printChanges()
         
-        switch viewModel.currentPriceState {
-        case .failure:
-            errorView
-        default:
-            DailyPriceSubView(viewModel: viewModel)
-                .disabled(viewModel.currentPriceState == .success ? false : true)
-            if viewModel.currentPriceState == .loading {
-                SpinnerView(title: "Loading . . .")
+        VStack{
+            switch viewModel.networkState {
+            case .failure:
+                errorView
+            default:
+                DailyPriceSubView(viewModel: viewModel)
+                    .disabled(viewModel.networkState == .success ? false : true)
+                if viewModel.networkState == .loading {
+                    SpinnerView(title: "Loading . . .")
+                }
             }
         }
+        .onAppear {
+            let reqBody = PriceRequest(
+                startDate: Timer().getCurrentDateOnly(),
+                endDate: Timer().getCurrentDateOnly(),
+                marginal: 0.59,
+                group: "hour",
+                vatIncluded: 1,
+                comparedToLastYear: 0
+            )
+            viewModel.getMarketPrices(body: reqBody)
+        }
+        
+        
     }
     
     private var errorView: some View {

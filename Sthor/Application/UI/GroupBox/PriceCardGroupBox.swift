@@ -11,7 +11,7 @@ struct PriceCardGroupBox: View {
     var info: CardConfig
     var body: some View {
         GroupBox(
-            label: Label(info.label, systemImage: info.icon)
+            label: Text(info.label)
                 .foregroundColor(info.type.foregroundColor)
                 .accessibilityLabel(info.label)
         ) {
@@ -22,5 +22,5 @@ struct PriceCardGroupBox: View {
 }
 
 #Preview {
-    PriceCardGroupBox(info: CardConfig(type: CardPriceType.now, label: "Test label", icon: "", content: "Test content"))
+    PriceCardGroupBox(info: CardConfig(type: CardPriceType.now, label: "Test label", content: "Test content"))
 }

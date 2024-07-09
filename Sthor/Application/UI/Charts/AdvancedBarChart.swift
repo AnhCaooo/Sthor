@@ -26,7 +26,7 @@ struct AdvancedBarChart: View {
     }
     
     var body: some View {
-        let currentTime: String = formatter.getCurrentTimeWithDateAndHourOnly()
+        let currentTime: String = Timer().getCurrentTimeWithDateAndHourOnly()
         let currentPrice: String = self.data.getCurrentPrice()
         
         let yValues = dataSeries.map { $0.price }

@@ -12,7 +12,6 @@ struct CardConfig: Identifiable {
     let id = UUID()
     let type: CardPriceType
     let label: String
-    let icon: String
     let content: String
 }
 

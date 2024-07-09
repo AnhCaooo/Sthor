@@ -7,6 +7,46 @@
 
 import Foundation
 
+struct PriceRequest: Codable {
+    let startDate: String
+    let endDate: String
+    let marginal: Float64
+//    let group: TimelyGroup
+//    let vatIncluded: VAT
+//    let comparedToLastYear: ComparedToLastYear
+    let group: String
+    let vatIncluded: Int32
+    let comparedToLastYear: Int32
+    
+    enum CodingKeys: String, CodingKey {
+        case startDate = "starttime"
+        case endDate = "endtime"
+        case marginal = "marginal"
+        case group
+        case vatIncluded = "include_vat"
+        case comparedToLastYear = "compare_to_last_year"
+    }
+    
+}
+
+enum TimelyGroup: String, Codable {
+    case hour = "hour"
+    case daily = "day"
+    case weekly = "week"
+    case monthly = "month"
+    case yearly = "year"
+}
+
+enum VAT: Int32, Codable  {
+    case included = 1
+    case notIncluded = 0
+}
+
+enum ComparedToLastYear: Int32, Codable {
+    case compared = 1
+    case notCompared = 0
+}
+
 struct PriceResponse: Codable {
     let status: String
     let data: PriceData
@@ -22,8 +62,7 @@ struct PriceSeries: Codable {
     let data: [TimelyData]
     
     func getCurrentPrice() -> String {
-        let formatter = DateFormatter()
-        let now: String = formatter.getCurrentTimeWithDateAndHourOnly()
+        let now: String = Timer().getCurrentTimeWithDateAndHourOnly()
         if let filteredData = data.first(where: {$0.time == now}) {
             return filteredData.parsePriceFromDoubleToString()
         }
@@ -68,7 +107,7 @@ struct TimelyData: Codable, Identifiable {
     let id = UUID()
     let origTime, time: String
     let price: Double
-    let vatFactor: Int
+    let vatFactor: VAT
     let isToday: Bool
 
     enum CodingKeys: String, CodingKey {
@@ -84,15 +123,6 @@ struct TimelyData: Codable, Identifiable {
     }
 }
 
-struct PriceRequest: Codable {
-    let startDate: String
-    let endDate: String
-    let marginal: Float64
-    let group: String
-    let vatIncluded: Int32
-    let comparedToLastYear: Int32
-}
-
 struct TodayTomorrowPrices: Codable {
     let today: DailyPrice
     let tomorrow: DailyPrice
@@ -102,4 +132,5 @@ struct DailyPrice: Codable {
     let available: Bool
     let prices: PriceSeries
 }
+
 

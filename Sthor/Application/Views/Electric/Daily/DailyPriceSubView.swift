@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct DailyPriceSubView: View {
-    @ObservedObject public var viewModel: CurrentPriceViewModel
+    @ObservedObject public var viewModel: MarketPriceViewModel
     
     var body: some View {
-        if let prices = viewModel.currentPrices {
-            let currentPrice: String = prices.today.prices.getCurrentPrice()
-            let averagePrice: String = prices.today.prices.getAveragePrice()
-            let lowestPrice: PriceAtTime = prices.today.prices.getLowestPrice()
-            let highestPrice: PriceAtTime = prices.today.prices.getHighestPrice()
-            let unit: String = prices.today.prices.name
+        if let prices = viewModel.prices {
+            let currentPrice: String = prices.data.series[0].getCurrentPrice()
+            let averagePrice: String = prices.data.series[0].getAveragePrice()
+            let lowestPrice: PriceAtTime = prices.data.series[0].getLowestPrice()
+            let highestPrice: PriceAtTime = prices.data.series[0].getHighestPrice()
+            let unit: String = prices.data.series[0].name
             
             VStack {
                 HStack {
@@ -24,7 +24,7 @@ struct DailyPriceSubView: View {
                         .foregroundStyle(.secondary)
                     Spacer()
                 }
-                AdvancedBarChart(data: prices.today.prices)
+                AdvancedBarChart(data: prices.data.series[0])
                     .frame(height: 300)
                     .padding(.top, 20)
                 Divider()
@@ -36,13 +36,12 @@ struct DailyPriceSubView: View {
                         Spacer()
                     }
                     // mark: only available for today view
-                    PriceCardGroupBox(info: CardConfig(type: CardPriceType.now, label: "Price now" , icon: "", content: "Current price is \(currentPrice) \(unit)"))
-                    PriceCardGroupBox(info: CardConfig(type: CardPriceType.average, label: "Average price", icon: "", content: "Average price is \(averagePrice) \(unit)"))
+                    PriceCardGroupBox(info: CardConfig(type: CardPriceType.now, label: "Price now" , content: "Current price is \(currentPrice) \(unit)"))
+                    PriceCardGroupBox(info: CardConfig(type: CardPriceType.average, label: "Average price", content: "Average price is \(averagePrice) \(unit)"))
                     HStack{
-                        PriceCardGroupBox(info: CardConfig(type: CardPriceType.lowest, label: "Lowest at \(lowestPrice.convertTimeToMeridian())", icon: "", content: "\(lowestPrice.price) \(unit)"))
-                        PriceCardGroupBox(info: CardConfig(type: CardPriceType.highest, label: "Highest at \(highestPrice.convertTimeToMeridian())", icon: "", content: "\(highestPrice.price) \(unit)"))
+                        PriceCardGroupBox(info: CardConfig(type: CardPriceType.lowest, label: "Lowest at \(lowestPrice.convertTimeToMeridian())", content: "\(lowestPrice.price) \(unit)"))
+                        PriceCardGroupBox(info: CardConfig(type: CardPriceType.highest, label: "Highest at \(highestPrice.convertTimeToMeridian())", content: "\(highestPrice.price) \(unit)"))
                     }
-                    
                     
                 }
                 .padding(.top, 20)
@@ -55,5 +54,5 @@ struct DailyPriceSubView: View {
 }
 
 #Preview {
-    DailyPriceSubView(viewModel: CurrentPriceViewModel())
+    DailyPriceSubView(viewModel: MarketPriceViewModel())
 }

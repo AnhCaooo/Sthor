@@ -11,6 +11,7 @@
 		A01E2D0E2BE7B4B400BFDAC3 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01E2D0D2BE7B4B400BFDAC3 /* DateFormatter+Extensions.swift */; };
 		A01F85012C3DC4A5008BDC72 /* MarketPriceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F85002C3DC4A5008BDC72 /* MarketPriceViewModel.swift */; };
 		A01F85032C3DCDDE008BDC72 /* Timer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F85022C3DCDDE008BDC72 /* Timer+Extension.swift */; };
+		A0229CF82C3F141000C30879 /* ElectricEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0229CF72C3F141000C30879 /* ElectricEnum.swift */; };
 		A027A4962C31CC4B0082E3BF /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027A4952C31CC4B0082E3BF /* WelcomeView.swift */; };
 		A027A4982C31CDED0082E3BF /* FeaturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027A4972C31CDED0082E3BF /* FeaturesView.swift */; };
 		A027A49B2C31CE5F0082E3BF /* FeatureCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027A49A2C31CE5F0082E3BF /* FeatureCard.swift */; };
@@ -52,6 +53,7 @@
 		A01E2D0D2BE7B4B400BFDAC3 /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		A01F85002C3DC4A5008BDC72 /* MarketPriceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketPriceViewModel.swift; sourceTree = "<group>"; };
 		A01F85022C3DCDDE008BDC72 /* Timer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timer+Extension.swift"; sourceTree = "<group>"; };
+		A0229CF72C3F141000C30879 /* ElectricEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectricEnum.swift; sourceTree = "<group>"; };
 		A027A4952C31CC4B0082E3BF /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		A027A4972C31CDED0082E3BF /* FeaturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesView.swift; sourceTree = "<group>"; };
 		A027A49A2C31CE5F0082E3BF /* FeatureCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCard.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				A03C92D32BE6A7FB0076E4F7 /* README.md */,
 				A064EE912C178BED0056B1F6 /* State.swift */,
 				A0D527B62C1F5D7C00EF78FE /* Tab.swift */,
+				A0229CF72C3F141000C30879 /* ElectricEnum.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				A03C92DA2BE6A86B0076E4F7 /* ProfileView.swift in Sources */,
 				A01F85012C3DC4A5008BDC72 /* MarketPriceViewModel.swift in Sources */,
 				A0AB80812C3A89F3009A7D2F /* CustomPriceView.swift in Sources */,
+				A0229CF82C3F141000C30879 /* ElectricEnum.swift in Sources */,
 				A027A4982C31CDED0082E3BF /* FeaturesView.swift in Sources */,
 				A06B348A2C15E0A7007B2342 /* SpinnerView.swift in Sources */,
 				A08D10A32C2B625E00143DFE /* DailyPriceSubView.swift in Sources */,

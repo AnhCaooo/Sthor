@@ -30,9 +30,9 @@ struct DailyPriceView: View {
                 startDate: Timer().getCurrentDateOnly(),
                 endDate: Timer().getCurrentDateOnly(),
                 marginal: 0.59,
-                group: "hour",
-                vatIncluded: 1,
-                comparedToLastYear: 0
+                group: .hour,
+                vatIncluded: .included,
+                comparedToLastYear: .notCompared
             )
             viewModel.getMarketPrices(body: reqBody)
         }

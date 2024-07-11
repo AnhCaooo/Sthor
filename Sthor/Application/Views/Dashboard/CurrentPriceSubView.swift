@@ -40,6 +40,11 @@ struct CurrentPriceSubView: View {
                     if prices.tomorrow.available {
                         MiniExchangePricesBarChart(data: prices.tomorrow.prices)
                             .frame(height: 80)
+                        HStack {
+                            Text("Tomorrow")
+                                .foregroundStyle(.secondary)
+                            Spacer()
+                        }
                     } else {
                         // TODO: Consider for later if we decide to support different languages
                         HStack {

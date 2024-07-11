@@ -18,13 +18,15 @@ struct DailyPriceView: View {
             case .failure:
                 errorView
             default:
-                DailyPriceSubView(viewModel: viewModel)
-                    .disabled(viewModel.networkState == .success ? false : true)
                 if viewModel.networkState == .loading {
                     SpinnerView(title: "Loading . . .")
                 }
+                DailyPriceSubView(viewModel: viewModel)
+                    .disabled(viewModel.networkState == .success ? false : true)
+                
             }
         }
+        
         .onAppear {
             let reqBody = PriceRequest(
                 startDate: Timer().getCurrentDateOnly(),

@@ -26,6 +26,7 @@
 		A03C92D62BE6A8390076E4F7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03C92D52BE6A8390076E4F7 /* HomeView.swift */; };
 		A03C92D82BE6A8500076E4F7 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03C92D72BE6A8500076E4F7 /* NotificationsView.swift */; };
 		A03C92DA2BE6A86B0076E4F7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03C92D92BE6A86B0076E4F7 /* ProfileView.swift */; };
+		A03E84A92C404ABF005AAFFB /* KeyPricesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E84A82C404ABF005AAFFB /* KeyPricesView.swift */; };
 		A04C246F2BECD1C300372341 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C246E2BECD1C300372341 /* Theme.swift */; };
 		A04C24712BECD58E00372341 /* Electric.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C24702BECD58E00372341 /* Electric.swift */; };
 		A064EE922C178BED0056B1F6 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = A064EE912C178BED0056B1F6 /* State.swift */; };
@@ -75,6 +76,7 @@
 		A03C92DB2BE6A8810076E4F7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A03C92DC2BE6A9280076E4F7 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		A03C92DD2BE6A9350076E4F7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A03E84A82C404ABF005AAFFB /* KeyPricesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPricesView.swift; sourceTree = "<group>"; };
 		A04C246E2BECD1C300372341 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		A04C24702BECD58E00372341 /* Electric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Electric.swift; sourceTree = "<group>"; };
 		A064EE912C178BED0056B1F6 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 			children = (
 				A0E3815C2C2B574D00CC6D02 /* DailyPriceView.swift */,
 				A08D10A22C2B625E00143DFE /* DailyPriceSubView.swift */,
+				A03E84A82C404ABF005AAFFB /* KeyPricesView.swift */,
 			);
 			path = Daily;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				A01E2D0E2BE7B4B400BFDAC3 /* DateFormatter+Extensions.swift in Sources */,
 				A027A49B2C31CE5F0082E3BF /* FeatureCard.swift in Sources */,
 				A064EE922C178BED0056B1F6 /* State.swift in Sources */,
+				A03E84A92C404ABF005AAFFB /* KeyPricesView.swift in Sources */,
 				A01F85032C3DCDDE008BDC72 /* Timer+Extension.swift in Sources */,
 				A04C24712BECD58E00372341 /* Electric.swift in Sources */,
 				A0EECDFC2C15A5B400D8934A /* CurrentPriceViewModel.swift in Sources */,

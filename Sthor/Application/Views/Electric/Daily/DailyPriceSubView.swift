@@ -12,11 +12,7 @@ struct DailyPriceSubView: View {
     
     var body: some View {
         if let prices = viewModel.prices {
-            let currentPrice: String = prices.data.series[0].getCurrentPrice()
-            let averagePrice: String = prices.data.series[0].getAveragePrice()
-            let lowestPrice: PriceAtTime = prices.data.series[0].getLowestPrice()
-            let highestPrice: PriceAtTime = prices.data.series[0].getHighestPrice()
-            let unit: String = prices.data.series[0].name
+            let priceData: PriceSeries = prices.data.series[0]
             
             VStack {
                 HStack {
@@ -27,24 +23,25 @@ struct DailyPriceSubView: View {
                 AdvancedBarChart(data: prices.data.series[0])
                     .frame(height: 300)
                     .padding(.top, 20)
-                Divider()
                 
-                VStack{
-                    HStack {
-                        Text("Key Price Points")
-                            .foregroundStyle(.secondary)
-                        Spacer()
+                // todo
+                HStack {
+                    Button {
+                        print("get price from previous date")
+                    } label: {
+                        Image(systemName: "chevron.left")
                     }
-                    // mark: only available for today view
-                    PriceCardGroupBox(info: CardConfig(type: CardPriceType.now, label: "Price now" , content: "Current price is \(currentPrice) \(unit)"))
-                    PriceCardGroupBox(info: CardConfig(type: CardPriceType.average, label: "Average price", content: "Average price is \(averagePrice) \(unit)"))
-                    HStack{
-                        PriceCardGroupBox(info: CardConfig(type: CardPriceType.lowest, label: "Lowest at \(lowestPrice.convertTimeToMeridian())", content: "\(lowestPrice.price) \(unit)"))
-                        PriceCardGroupBox(info: CardConfig(type: CardPriceType.highest, label: "Highest at \(highestPrice.convertTimeToMeridian())", content: "\(highestPrice.price) \(unit)"))
+                    Spacer()
+                    Text("current day")
+                    Spacer()
+                    Button {
+                        print("get price from following date but stop at tomorrow (disable)")
+                    } label: {
+                        Image(systemName: "chevron.right")
                     }
-                    
                 }
-                .padding(.top, 20)
+                Divider()
+                KeyPricesView(date: Timer().getCurrentDateOnly(), prices: priceData)
                 
             }
             

@@ -84,16 +84,17 @@ struct PriceAtTime: Codable {
 
 struct TimelyData: Codable, Identifiable {
     let id = UUID()
-    let origTime, time: String
+    let utcTime, origTime, time: String
     let price: Double
-    let vatFactor: VAT
+    let vatFactor: Double
     let isToday: Bool
+    let includeVat: VAT
 
     enum CodingKeys: String, CodingKey {
+        case utcTime = "time_utc"
         case origTime = "orig_time"
-        case time, price
         case vatFactor = "vat_factor"
-        case isToday
+        case time, price, isToday, includeVat
     }
     
     // Use to convert price from Doube to formatted string

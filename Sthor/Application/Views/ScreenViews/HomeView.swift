@@ -13,7 +13,6 @@ struct HomeView: View {
     
     var body: some View {
         let header = Header( title: "Dashboard",
-//                             subTitle: formatter.formatDateToString(date: currentDate),
                              horizontalAlignment: .leading)
         NavigationStack {
             ScrollView(.vertical) {

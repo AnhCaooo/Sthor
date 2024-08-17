@@ -15,9 +15,9 @@ enum TimelyGroup: String, Codable {
     case yearly = "year"
 }
 
-enum VAT: Int32, Codable  {
-    case included = 1
-    case notIncluded = 0
+enum VAT: String, Codable  {
+    case included = "1"
+    case notIncluded = "0"
 }
 
 enum ComparedToLastYear: Int32, Codable {

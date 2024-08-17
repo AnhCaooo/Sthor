@@ -21,7 +21,7 @@ class MarketPriceViewModel: ObservableObject {
         electricService.GetMarketPrice(reqBody: body)
             .sink(receiveCompletion: { [weak self] completion in
                 if case let .failure(err) = completion {
-                    self?.errorMessage = err.localizedDescription
+                    self?.errorMessage = String(describing: err)
                     self?.networkState = .failure
                 }
             }, receiveValue: { [weak self] (receivedValue: PriceResponse) in

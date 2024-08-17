@@ -20,6 +20,11 @@ enum VAT: String, Codable  {
     case notIncluded = "0"
 }
 
+enum Int32VAT: Int32, Codable {
+    case included = 1
+    case notIncluded = 0
+}
+
 enum ComparedToLastYear: Int32, Codable {
     case compared = 1
     case notCompared = 0

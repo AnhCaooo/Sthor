@@ -7,12 +7,14 @@
 
 import Foundation
 
+
+// Electric price request
 struct PriceRequest: Codable {
     let startDate: String
     let endDate: String
     let marginal: Float64
     let group: TimelyGroup
-    let vatIncluded: VAT
+    let vatIncluded: Int32VAT
     let comparedToLastYear: ComparedToLastYear
     
     enum CodingKeys: String, CodingKey {
@@ -82,6 +84,7 @@ struct PriceAtTime: Codable {
     }
 }
 
+// Single electric price unit response
 struct TimelyData: Codable, Identifiable {
     let id = UUID()
     let utcTime, origTime, time: String

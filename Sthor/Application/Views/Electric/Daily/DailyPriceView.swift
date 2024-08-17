@@ -25,21 +25,7 @@ struct DailyPriceView: View {
                     .disabled(viewModel.networkState == .success ? false : true)
                 
             }
-        }
-        
-        .onAppear {
-            let reqBody = PriceRequest(
-                startDate: Timer().getCurrentDateOnly(),
-                endDate: Timer().getCurrentDateOnly(),
-                marginal: 0.59,
-                group: .hour,
-                vatIncluded: .included,
-                comparedToLastYear: .notCompared
-            )
-            viewModel.getMarketPrices(body: reqBody)
-        }
-        
-        
+        }       
     }
     
     private var errorView: some View {

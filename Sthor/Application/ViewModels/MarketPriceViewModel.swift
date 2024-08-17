@@ -16,6 +16,18 @@ class MarketPriceViewModel: ObservableObject {
     
     private let electricService = ElectricService()
     
+    init() {
+        let reqBody = PriceRequest(
+            startDate: Timer().getCurrentDateOnly(),
+            endDate: Timer().getCurrentDateOnly(),
+            marginal: 0.59,
+            group: .hour,
+            vatIncluded: .included,
+            comparedToLastYear: .notCompared
+        )
+        getMarketPrices(body: reqBody)
+    }
+    
     func getMarketPrices(body: PriceRequest) {
         networkState = .loading
         electricService.GetMarketPrice(reqBody: body)

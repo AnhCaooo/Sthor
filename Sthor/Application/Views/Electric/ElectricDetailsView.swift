@@ -11,24 +11,44 @@ struct ElectricDetailsView: View {
     @ObservedObject public var viewModel: MarketPriceViewModel
     var group: TimelyGroup
     
+    @State private var currentTime: String = "2024-08-19"
     var body: some View {
         if let prices = viewModel.prices {
             let priceData: PriceSeries = prices.data.series[0]
-            
-            VStack {
-                HStack {
-                    Text(getDefaultTimeInString(group: group))
-                        .foregroundStyle(.secondary)
-                    Spacer()
+            NavigationStack {
+                VStack {
+                    HStack {
+                        Text(getDefaultTimeInString(group: group))
+                            .foregroundStyle(.secondary)
+                        Spacer()
+                    }
+                    AdvancedBarChart(data: prices.data.series[0])
+                        .frame(height: 300)
+                        .padding(.top, 20)
+                    Divider()
+                    KeyPricesView(prices: priceData, group: group)
+                    
                 }
-                AdvancedBarChart(data: prices.data.series[0])
-                    .frame(height: 300)
-                    .padding(.top, 20)
-                Divider()
-                KeyPricesView(prices: priceData, group: group)
-                
+                .toolbar {
+                    ToolbarItemGroup(placement: .bottomBar) {
+                        Button {
+                            currentTime = decreaseDate(dateString: currentTime)
+                            // print("get price from previous date", currentTime)
+                        } label: {
+                            Image(systemName: "chevron.left")
+                        }
+                        Spacer()
+                        Text(Timer().getDateString(dateString: currentTime))
+                        Spacer()
+                        Button {
+                            currentTime = increaseDate(dateString: currentTime)
+                            // print("get price from next date", currentTime)
+                        } label: {
+                            Image(systemName: "chevron.right")
+                        }
+                    }
+                }
             }
-            
         }
     }
 }
@@ -47,6 +67,27 @@ extension ElectricDetailsView {
             time = ""
         }
         return time
+    }
+    func increaseDate(dateString: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        guard let date = dateFormatter.date(from: dateString) else {
+            return dateString
+        }
+        let calendar = Calendar.current
+        let newDate = calendar.date(byAdding: .day, value: 1, to: date)
+        return dateFormatter.string(from: newDate!)
+    }
+
+    func decreaseDate(dateString: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        guard let date = dateFormatter.date(from: dateString) else {
+            return dateString
+        }
+        let calendar = Calendar.current
+        let newDate = calendar.date(byAdding: .day, value: -1, to: date)
+        return dateFormatter.string(from: newDate!)
     }
 }
 #Preview {

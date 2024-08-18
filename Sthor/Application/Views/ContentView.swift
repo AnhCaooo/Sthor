@@ -11,24 +11,26 @@ struct ContentView: View {
     @State private var selectedTab: Tab = .home
     
     var body: some View {
-        TabView(selection: $selectedTab) {
-            HomeView()
-                .tabItem{
-                    Label("Home", systemImage: "house")
-                }
-                .tag(Tab.home)
-            
-            NotificationsView()
-                .tabItem{
-                    Label("Notifications", systemImage: "bell")
-                }
-                .tag(Tab.notifications)
-            
-            ProfileView()
-                .tabItem{
-                    Label("Profile", systemImage: "person")
-                }
-                .tag(Tab.profile)
+        NavigationStack {
+            TabView(selection: $selectedTab) {
+                HomeView()
+                    .tabItem{
+                        Label("Home", systemImage: "house")
+                    }
+                    .tag(Tab.home)
+                
+                NotificationsView()
+                    .tabItem{
+                        Label("Notifications", systemImage: "bell")
+                    }
+                    .tag(Tab.notifications)
+                
+                ProfileView()
+                    .tabItem{
+                        Label("Profile", systemImage: "person")
+                    }
+                    .tag(Tab.profile)
+            }
         }
     }
 }

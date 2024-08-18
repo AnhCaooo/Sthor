@@ -16,7 +16,7 @@ struct HomeView: View {
                              horizontalAlignment: .leading)
         NavigationStack {
             ScrollView(.vertical) {
-                VStack(spacing: 24) {
+                VStack {
                     // MARK: Current exchange price chart
                     CurrentPriceView()
                     

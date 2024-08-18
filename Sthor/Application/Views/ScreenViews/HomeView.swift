@@ -13,11 +13,10 @@ struct HomeView: View {
     
     var body: some View {
         let header = Header( title: "Dashboard",
-//                             subTitle: formatter.formatDateToString(date: currentDate),
                              horizontalAlignment: .leading)
         NavigationStack {
             ScrollView(.vertical) {
-                VStack(spacing: 24) {
+                VStack {
                     // MARK: Current exchange price chart
                     CurrentPriceView()
                     

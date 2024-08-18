@@ -7,12 +7,14 @@
 
 import Foundation
 
+
+// Electric price request
 struct PriceRequest: Codable {
     let startDate: String
     let endDate: String
     let marginal: Float64
     let group: TimelyGroup
-    let vatIncluded: VAT
+    let vatIncluded: Int32VAT
     let comparedToLastYear: ComparedToLastYear
     
     enum CodingKeys: String, CodingKey {
@@ -40,6 +42,13 @@ struct PriceSeries: Codable {
     let name: String
     let data: [TimelyData]
     
+    func isTodayPrices() -> Bool {
+        let now: String = Timer().getCurrentTimeWithDateAndHourOnly()
+        if let filteredData = data.first(where: {$0.time == now}) {
+            return true
+        }
+        return false
+    }
     func getCurrentPrice() -> String {
         let now: String = Timer().getCurrentTimeWithDateAndHourOnly()
         if let filteredData = data.first(where: {$0.time == now}) {
@@ -82,18 +91,20 @@ struct PriceAtTime: Codable {
     }
 }
 
+// Single electric price unit response
 struct TimelyData: Codable, Identifiable {
     let id = UUID()
-    let origTime, time: String
+    let utcTime, origTime, time: String
     let price: Double
-    let vatFactor: VAT
+    let vatFactor: Double
     let isToday: Bool
+    let includeVat: VAT
 
     enum CodingKeys: String, CodingKey {
+        case utcTime = "time_utc"
         case origTime = "orig_time"
-        case time, price
         case vatFactor = "vat_factor"
-        case isToday
+        case time, price, isToday, includeVat
     }
     
     // Use to convert price from Doube to formatted string

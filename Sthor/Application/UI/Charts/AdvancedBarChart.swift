@@ -10,6 +10,7 @@ import Charts
 
 struct AdvancedBarChart: View {
     let formatter: DateFormatter
+    let timer: Timer
     /// Receiving parameter
     var data: PriceSeries
     /// Properties
@@ -23,10 +24,11 @@ struct AdvancedBarChart: View {
         self.unit = data.name
         self.dataSeries = data.data
         self.formatter = DateFormatter()
+        self.timer = Timer()
     }
     
     var body: some View {
-        let currentTime: String = Timer().getCurrentTimeWithDateAndHourOnly()
+        let currentTime: String = timer.getCurrentTimeWithDateAndHourOnly()
         let currentPrice: String = self.data.getCurrentPrice()
         
         let yValues = dataSeries.map { $0.price }

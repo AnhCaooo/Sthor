@@ -26,7 +26,7 @@ class CurrentPriceViewModel: ObservableObject {
         electricService.GetTodayTomorrowPrices()
             .sink(receiveCompletion: { [weak self] completion in
                 if case let .failure(err) = completion {
-                    self?.errorMessage = err.localizedDescription
+                    self?.errorMessage = String(describing: err)
                     self?.currentPriceState = .failure
                 }
             }, receiveValue: { [weak self] (receivedValue: TodayTomorrowPrices) in

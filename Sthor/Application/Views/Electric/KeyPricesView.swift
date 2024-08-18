@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct KeyPricesView: View {
-    var date: String
     var prices: PriceSeries
+    var group: TimelyGroup
     
     var body: some View {
         let currentPrice: String = prices.getCurrentPrice()
@@ -24,8 +24,8 @@ struct KeyPricesView: View {
                     .foregroundStyle(.secondary)
                 Spacer()
             }
-            // mark: only available for today view
-            if Timer().isToday(dateString: date) {
+            // mark: current price is only available for today and in hour view
+            if prices.isTodayPrices() && group == .hour {
                 PriceCardGroupBox(info: CardConfig(type: CardPriceType.now, label: "Price now" , content: "Current price is \(currentPrice) \(unit)"))
             }
             PriceCardGroupBox(info: CardConfig(type: CardPriceType.average, label: "Average price", content: "Average price is \(averagePrice) \(unit)"))
@@ -40,5 +40,5 @@ struct KeyPricesView: View {
 }
 
 #Preview {
-    KeyPricesView(date: "2024-07-11" ,prices: samplePriceSeries)
+    KeyPricesView(prices: samplePriceSeries, group: .hour)
 }

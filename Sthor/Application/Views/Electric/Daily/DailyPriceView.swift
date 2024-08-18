@@ -21,7 +21,7 @@ struct DailyPriceView: View {
                 if viewModel.networkState == .loading {
                     SpinnerView(title: "Loading . . .")
                 }
-                DailyPriceSubView(viewModel: viewModel)
+                ElectricDetailsView(viewModel: viewModel, group: .hour)
                     .disabled(viewModel.networkState == .success ? false : true)
                 
             }

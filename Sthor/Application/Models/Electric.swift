@@ -42,6 +42,13 @@ struct PriceSeries: Codable {
     let name: String
     let data: [TimelyData]
     
+    func isTodayPrices() -> Bool {
+        let now: String = Timer().getCurrentTimeWithDateAndHourOnly()
+        if let filteredData = data.first(where: {$0.time == now}) {
+            return true
+        }
+        return false
+    }
     func getCurrentPrice() -> String {
         let now: String = Timer().getCurrentTimeWithDateAndHourOnly()
         if let filteredData = data.first(where: {$0.time == now}) {

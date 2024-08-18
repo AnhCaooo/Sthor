@@ -33,7 +33,6 @@
 		A064EE942C178E410056B1F6 /* CurrentPriceSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A064EE932C178E410056B1F6 /* CurrentPriceSubView.swift */; };
 		A06B348A2C15E0A7007B2342 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B34892C15E0A7007B2342 /* SpinnerView.swift */; };
 		A07328952BF6A13F0078D70F /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07328942BF6A13F0078D70F /* Color+Extensions.swift */; };
-		A08D10A32C2B625E00143DFE /* DailyPriceSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08D10A22C2B625E00143DFE /* DailyPriceSubView.swift */; };
 		A0AB80812C3A89F3009A7D2F /* CustomPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AB80802C3A89F3009A7D2F /* CustomPriceView.swift */; };
 		A0AB80832C3AA365009A7D2F /* PriceCardGroupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AB80822C3AA365009A7D2F /* PriceCardGroupBox.swift */; };
 		A0AB80852C3AA3C9009A7D2F /* CardGroupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AB80842C3AA3C9009A7D2F /* CardGroupBox.swift */; };
@@ -41,6 +40,7 @@
 		A0B956ED2BEF70540062C411 /* AdvancedBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B956EC2BEF70540062C411 /* AdvancedBarChart.swift */; };
 		A0B956EF2BEF7AD20062C411 /* MiniExchangePricesBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B956EE2BEF7AD20062C411 /* MiniExchangePricesBarChart.swift */; };
 		A0B956F62BEF82FE0062C411 /* CurrentPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B956F52BEF82FE0062C411 /* CurrentPriceView.swift */; };
+		A0C72DE72C724C8F00DE4529 /* ElectricDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C72DE62C724C8F00DE4529 /* ElectricDetailsView.swift */; };
 		A0D527B72C1F5D7C00EF78FE /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D527B62C1F5D7C00EF78FE /* Tab.swift */; };
 		A0E3815D2C2B574D00CC6D02 /* DailyPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E3815C2C2B574D00CC6D02 /* DailyPriceView.swift */; };
 		A0E3815F2C2B578A00CC6D02 /* WeeklyPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E3815E2C2B578A00CC6D02 /* WeeklyPriceView.swift */; };
@@ -84,7 +84,6 @@
 		A06B34882C15CF28007B2342 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A06B34892C15E0A7007B2342 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		A07328942BF6A13F0078D70F /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
-		A08D10A22C2B625E00143DFE /* DailyPriceSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPriceSubView.swift; sourceTree = "<group>"; };
 		A0AB80802C3A89F3009A7D2F /* CustomPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPriceView.swift; sourceTree = "<group>"; };
 		A0AB80822C3AA365009A7D2F /* PriceCardGroupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceCardGroupBox.swift; sourceTree = "<group>"; };
 		A0AB80842C3AA3C9009A7D2F /* CardGroupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGroupBox.swift; sourceTree = "<group>"; };
@@ -92,6 +91,7 @@
 		A0B956EC2BEF70540062C411 /* AdvancedBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedBarChart.swift; sourceTree = "<group>"; };
 		A0B956EE2BEF7AD20062C411 /* MiniExchangePricesBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniExchangePricesBarChart.swift; sourceTree = "<group>"; };
 		A0B956F52BEF82FE0062C411 /* CurrentPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPriceView.swift; sourceTree = "<group>"; };
+		A0C72DE62C724C8F00DE4529 /* ElectricDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectricDetailsView.swift; sourceTree = "<group>"; };
 		A0D527B62C1F5D7C00EF78FE /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		A0E3815C2C2B574D00CC6D02 /* DailyPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPriceView.swift; sourceTree = "<group>"; };
 		A0E3815E2C2B578A00CC6D02 /* WeeklyPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyPriceView.swift; sourceTree = "<group>"; };
@@ -267,8 +267,6 @@
 			isa = PBXGroup;
 			children = (
 				A0E3815C2C2B574D00CC6D02 /* DailyPriceView.swift */,
-				A08D10A22C2B625E00143DFE /* DailyPriceSubView.swift */,
-				A03E84A82C404ABF005AAFFB /* KeyPricesView.swift */,
 			);
 			path = Daily;
 			sourceTree = "<group>";
@@ -330,6 +328,8 @@
 				A0AB807E2C3A897E009A7D2F /* Monthly */,
 				A0AB807D2C3A8973009A7D2F /* Weekly */,
 				A08D109F2C2B60FA00143DFE /* Daily */,
+				A0C72DE62C724C8F00DE4529 /* ElectricDetailsView.swift */,
+				A03E84A82C404ABF005AAFFB /* KeyPricesView.swift */,
 			);
 			path = Electric;
 			sourceTree = "<group>";
@@ -432,6 +432,7 @@
 				A03C92D12BE6A7B60076E4F7 /* ScreenHeader.swift in Sources */,
 				A0B956F62BEF82FE0062C411 /* CurrentPriceView.swift in Sources */,
 				A0B956EF2BEF7AD20062C411 /* MiniExchangePricesBarChart.swift in Sources */,
+				A0C72DE72C724C8F00DE4529 /* ElectricDetailsView.swift in Sources */,
 				A01E2D0C2BE7AF2D00BFDAC3 /* View+Extenstions.swift in Sources */,
 				A03C92D62BE6A8390076E4F7 /* HomeView.swift in Sources */,
 				A064EE942C178E410056B1F6 /* CurrentPriceSubView.swift in Sources */,
@@ -447,7 +448,6 @@
 				A0229CF82C3F141000C30879 /* ElectricEnum.swift in Sources */,
 				A027A4982C31CDED0082E3BF /* FeaturesView.swift in Sources */,
 				A06B348A2C15E0A7007B2342 /* SpinnerView.swift in Sources */,
-				A08D10A32C2B625E00143DFE /* DailyPriceSubView.swift in Sources */,
 				A0E3815F2C2B578A00CC6D02 /* WeeklyPriceView.swift in Sources */,
 				A03C92D82BE6A8500076E4F7 /* NotificationsView.swift in Sources */,
 				A027A4962C31CC4B0082E3BF /* WelcomeView.swift in Sources */,

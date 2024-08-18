@@ -8,11 +8,47 @@
 import SwiftUI
 
 struct ElectricDetailsView: View {
+    @ObservedObject public var viewModel: MarketPriceViewModel
+    var group: TimelyGroup
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        if let prices = viewModel.prices {
+            let priceData: PriceSeries = prices.data.series[0]
+            
+            VStack {
+                HStack {
+                    Text(getDefaultTimeInString(group: group))
+                        .foregroundStyle(.secondary)
+                    Spacer()
+                }
+                AdvancedBarChart(data: prices.data.series[0])
+                    .frame(height: 300)
+                    .padding(.top, 20)
+                Divider()
+                KeyPricesView(prices: priceData, group: group)
+                
+            }
+            
+        }
     }
 }
 
+extension ElectricDetailsView {
+    func getDefaultTimeInString(group: TimelyGroup) -> String {
+        var time: String = "n/a"
+        switch group {
+        case .hour:
+            time = "Today"
+        case .weekly:
+            time = "This week"
+        case .monthly:
+            time = "This month"
+        default:
+            time = ""
+        }
+        return time
+    }
+}
 #Preview {
-    ElectricDetailsView()
+    ElectricDetailsView(viewModel: MarketPriceViewModel(), group: .hour)
 }

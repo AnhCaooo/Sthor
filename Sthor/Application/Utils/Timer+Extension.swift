@@ -20,6 +20,7 @@ extension Timer {
         return formatter.string(from: Date())
     }
     
+    // Mark: consider to remove if this function is no longer used
     func isToday(dateString: String) -> Bool {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"

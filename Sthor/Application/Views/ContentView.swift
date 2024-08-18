@@ -11,7 +11,6 @@ struct ContentView: View {
     @State private var selectedTab: Tab = .home
     
     var body: some View {
-        NavigationStack {
             TabView(selection: $selectedTab) {
                 HomeView()
                     .tabItem{
@@ -31,7 +30,6 @@ struct ContentView: View {
                     }
                     .tag(Tab.profile)
             }
-        }
     }
 }
 

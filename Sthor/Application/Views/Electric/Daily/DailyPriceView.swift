@@ -51,6 +51,7 @@ struct DailyPriceView: View {
                     } label: {
                         Image(systemName: "chevron.right")
                     }
+                    .disabled(Timer().isTargetTimeLargerThanTomorrow(receivingDate: currentDate))
                 }
             }
         }

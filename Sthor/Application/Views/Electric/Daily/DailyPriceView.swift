@@ -42,7 +42,7 @@ struct DailyPriceView: View {
                         Image(systemName: "chevron.left")
                     }
                     Spacer()
-                    Text(Timer().getDateString(dateString: currentDate))
+                    Text(Timer().getDateString(receivingDate: currentDate))
                     Spacer()
                     Button {
                         currentDate = increaseDate(dateString: currentDate)
@@ -51,6 +51,7 @@ struct DailyPriceView: View {
                     } label: {
                         Image(systemName: "chevron.right")
                     }
+                    .disabled(Timer().isTargetTimeLargerThanTomorrow(receivingDate: currentDate))
                 }
             }
         }

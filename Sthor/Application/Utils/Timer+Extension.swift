@@ -40,30 +40,47 @@ extension Timer {
         return dateString == currentDateString
     }
     
-    // todo: currently, this only support for daily
-    // bug… somehow 2 near date is not showing correct
-    func getDateString(dateString: String) -> String {
+    func getDateString(receivingDate: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-
-        guard let date = dateFormatter.date(from: dateString) else {
+        
+        guard let targetDate = dateFormatter.date(from: receivingDate) else {
             return "Invalid date"
         }
-
+        
         let calendar = Calendar.current
-        let currentDate = Date()
-
-        let components = calendar.dateComponents([.year, .month, .day], from: currentDate, to: date)
-
-        if components.year == 0 && components.month == 0 && components.day == 0 {
+        
+        // Check if the target date is today, tomorrow, or yesterday
+        if calendar.isDateInToday(targetDate) {
             return "Today"
-        } else if components.year == 0 && components.month == 0 && components.day == 1 {
+        } else if calendar.isDateInTomorrow(targetDate) {
             return "Tomorrow"
-        } else if components.year == 0 && components.month == 0 && components.day == -1 {
+        } else if calendar.isDateInYesterday(targetDate) {
             return "Yesterday"
         } else {
-            return dateFormatter.string(from: date)
+            // Return the formatted date string for other cases
+            return dateFormatter.string(from: targetDate)
         }
+
     }
     
+    func isTargetTimeLargerThanTomorrow(receivingDate: String) -> Bool {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+            
+        guard let targetDate = dateFormatter.date(from: receivingDate) else {
+            return false // Assuming we return `false` on invalid date instead of `true`
+        }
+            
+        let calendar = Calendar.current
+        let today = calendar.startOfDay(for: Date())
+            
+        // Adding one day to today to get tomorrow's date
+        guard let tomorrow = calendar.date(byAdding: .day, value: 1, to: today) else {
+            return false // Fail-safe
+        }
+            
+        // Check if targetDate is later than tomorrow
+        return targetDate > tomorrow
+    }
 }

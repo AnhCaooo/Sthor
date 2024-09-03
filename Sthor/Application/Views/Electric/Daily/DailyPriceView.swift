@@ -10,7 +10,7 @@ import SwiftUI
 struct DailyPriceView: View {
     @StateObject var viewModel = MarketPriceViewModel()
     
-    @State private var currentTime: String = Timer().getCurrentDateOnly()
+    @State private var currentDate: String = Timer().getCurrentDateOnly()
     var body: some View {
         let _ = Self._printChanges()
         
@@ -23,55 +23,31 @@ struct DailyPriceView: View {
                     if viewModel.networkState == .loading {
                         SpinnerView(title: "Getting price . . .")
                     } else {
-                        ElectricDetailsView(viewModel: viewModel, group: .hour)
+                        DetailsDailyView(viewModel: viewModel, group: .hour)
                             .disabled(viewModel.networkState == .success ? false : true)
                     }
                 }
             }
             .onAppear {
-                let reqBody = PriceRequest(
-                    startDate: currentTime,
-                    endDate: currentTime,
-                    marginal: 0.59,
-                    group: .hour,
-                    vatIncluded: .included,
-                    comparedToLastYear: .notCompared
-                )
-                viewModel.getMarketPrices(body: reqBody)
+                getPriceFromDay(date: currentDate) 
             }
             .toolbar {
                 ToolbarItemGroup(placement: .bottomBar) {
                     Button {
-                        currentTime = decreaseDate(dateString: currentTime)
-                        print("get price from previous date", currentTime)
-                        let reqBody = PriceRequest(
-                            startDate: currentTime,
-                            endDate: currentTime,
-                            marginal: 0.59,
-                            group: .hour,
-                            vatIncluded: .included,
-                            comparedToLastYear: .notCompared
-                        )
-                        viewModel.getMarketPrices(body: reqBody)
+                        currentDate = decreaseDate(dateString: currentDate)
+                        print("get price from previous date", currentDate)
+                        getPriceFromDay(date: currentDate)
                         
                     } label: {
                         Image(systemName: "chevron.left")
                     }
                     Spacer()
-                    Text(Timer().getDateString(dateString: currentTime))
+                    Text(Timer().getDateString(dateString: currentDate))
                     Spacer()
                     Button {
-                        currentTime = increaseDate(dateString: currentTime)
-                        print("get price from next date", currentTime)
-                        let reqBody = PriceRequest(
-                            startDate: currentTime,
-                            endDate: currentTime,
-                            marginal: 0.59,
-                            group: .hour,
-                            vatIncluded: .included,
-                            comparedToLastYear: .notCompared
-                        )
-                        viewModel.getMarketPrices(body: reqBody)
+                        currentDate = increaseDate(dateString: currentDate)
+                        print("get price from next date", currentDate)
+                        getPriceFromDay(date: currentDate)
                     } label: {
                         Image(systemName: "chevron.right")
                     }
@@ -109,6 +85,18 @@ extension DailyPriceView {
         let calendar = Calendar.current
         let newDate = calendar.date(byAdding: .day, value: -1, to: date)
         return dateFormatter.string(from: newDate!)
+    }
+    
+    func getPriceFromDay(date: String) {
+        let reqBody = PriceRequest(
+            startDate: date,
+            endDate: date,
+            marginal: 0.59,
+            group: .hour,
+            vatIncluded: .included,
+            comparedToLastYear: .notCompared
+        )
+        viewModel.getMarketPrices(body: reqBody)
     }
 }
 #Preview {

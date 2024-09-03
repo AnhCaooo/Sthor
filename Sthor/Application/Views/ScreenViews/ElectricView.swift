@@ -10,8 +10,6 @@ import SwiftUI
 struct ElectricView: View {    
     enum BarChartStyle: CaseIterable, Identifiable {
         case daily
-        case weekly
-        case monthly
         case custom
         
         var id: Self {self}
@@ -19,10 +17,6 @@ struct ElectricView: View {
             switch self {
             case .daily:
                 "Daily"
-            case .weekly:
-                "Weekly"
-            case .monthly:
-                "Monthly"
             case .custom:
                 "Custom"
             }
@@ -47,10 +41,6 @@ struct ElectricView: View {
                         switch selectedBarChartType {
                         case .daily:
                             DailyPriceView()                            
-                        case .weekly:
-                            WeeklyPriceView()
-                        case .monthly:
-                            MonthlyPriceView()
                         case .custom:
                             CustomPriceView()
                         }                        

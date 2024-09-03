@@ -1,13 +1,13 @@
 //
-//  ElectricDetailsView.swift
+//  DetailsDailyView.swift
 //  Sthor
 //
-//  Created by Anh Cao on 18.8.2024.
+//  Created by Anh Cao on 3.9.2024.
 //
 
 import SwiftUI
 
-struct ElectricDetailsView: View {
+struct DetailsDailyView: View {
     @ObservedObject public var viewModel: MarketPriceViewModel
     var group: TimelyGroup
     
@@ -26,5 +26,5 @@ struct ElectricDetailsView: View {
 }
 
 #Preview {
-    ElectricDetailsView(viewModel: MarketPriceViewModel(), group: .hour)
+    DetailsDailyView(viewModel: MarketPriceViewModel(), group: .hour)
 }

@@ -42,18 +42,21 @@ extension Timer {
     
     // todo: currently, this only support for daily
     // bug… somehow 2 near date is not showing correct
-    func getDateString(dateString: String) -> String {
+    func getDateString(receivingDate: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
 
-        guard let date = dateFormatter.date(from: dateString) else {
+        let currentDateInString = dateFormatter.string(from: Date())
+        guard let currentDate = dateFormatter.date(from: currentDateInString) else {
             return "Invalid date"
         }
-
+        
+        guard let targetDate = dateFormatter.date(from: receivingDate) else {
+            return "Invalid date"
+        }
+        
         let calendar = Calendar.current
-        let currentDate = Date()
-
-        let components = calendar.dateComponents([.year, .month, .day], from: currentDate, to: date)
+        let components = calendar.dateComponents([.year, .month, .day], from: currentDate, to: targetDate)
 
         if components.year == 0 && components.month == 0 && components.day == 0 {
             return "Today"
@@ -62,7 +65,7 @@ extension Timer {
         } else if components.year == 0 && components.month == 0 && components.day == -1 {
             return "Yesterday"
         } else {
-            return dateFormatter.string(from: date)
+            return dateFormatter.string(from: targetDate)
         }
     }
     

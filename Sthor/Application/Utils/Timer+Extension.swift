@@ -81,6 +81,6 @@ extension Timer {
         }
             
         // Check if targetDate is later than tomorrow
-        return targetDate > tomorrow
+        return targetDate >= tomorrow
     }
 }

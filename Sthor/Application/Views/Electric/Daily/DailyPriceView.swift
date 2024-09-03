@@ -23,7 +23,7 @@ struct DailyPriceView: View {
                     if viewModel.networkState == .loading {
                         SpinnerView(title: "Getting price . . .")
                     } else {
-                        ElectricDetailsView(viewModel: viewModel, group: .hour)
+                        DetailsDailyView(viewModel: viewModel, group: .hour)
                             .disabled(viewModel.networkState == .success ? false : true)
                     }
                 }

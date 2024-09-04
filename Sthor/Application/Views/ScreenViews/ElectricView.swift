@@ -40,14 +40,23 @@ struct ElectricView: View {
                         Divider()
                         switch selectedBarChartType {
                         case .daily:
-                            DailyPriceView()                            
+                            DailyPriceView()
                         case .custom:
                             CustomPriceView()
-                        }                        
+                        }
                     }
-                    
                 }
                 .padding()
+            }
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        // action
+                        print("open edit modal")
+                    } label: {
+                        Image(systemName: "ellipsis.circle")
+                    }
+                }
             }
         }
         .navigationTitle("Electric")
